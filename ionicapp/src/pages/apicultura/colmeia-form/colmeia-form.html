@@ -14,7 +14,7 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
   <ion-item>
     <ion-icon color="primary" name="grid" item-start></ion-icon>
@@ -30,21 +30,47 @@
     <ion-label stacked>Número</ion-label>
     <ion-input type="text" [(ngModel)]="dadosDoForm.numero"></ion-input>
   </ion-item> -->
+
   <ion-item>
     <ion-icon color="primary" name="cube" item-start></ion-icon>
     <ion-label stacked>Identificação</ion-label>
     <ion-input type="text" [(ngModel)]="dadosDoForm.nome"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-icon color="primary" name="cube" item-start></ion-icon>
-    <ion-label stacked>Quantidade de Ninho</ion-label>
-    <ion-input type="number" [(ngModel)]="dadosDoForm.quantidadeNinho"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-icon color="primary" name="cube" item-start></ion-icon>
-    <ion-label stacked>Quantidade de Melgueira</ion-label>
-    <ion-input type="number" [(ngModel)]="dadosDoForm.quantidadeMelgueira"></ion-input>
-  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-7>
+        <ion-item>
+          <ion-icon color="primary" name="cube" item-start></ion-icon>
+          <ion-label stacked>Melgueiras</ion-label>
+          <ion-input type="number" [(ngModel)]="dadosDoForm.quantidadeMelgueira"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-5>
+        <ion-item>
+          <ion-label stacked>Ninhos</ion-label>
+          <ion-input type="number" [(ngModel)]="dadosDoForm.quantidadeNinho"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <br />
+
+  <ion-item-group>
+    <ion-item-divider color="light">Postura</ion-item-divider>
+    <ion-item>Ovos <p item-end>3</p></ion-item>
+    <ion-item>Larvas <p item-end>3</p></ion-item>
+    <ion-item>Pupas <p item-end>3</p></ion-item>
+    <ion-item>Pupas de zangão <p item-end>3</p></ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Alimento</ion-item-divider>
+    <ion-item>Mel <p item-end>3</p></ion-item>
+    <ion-item>Nectar <p item-end>3</p></ion-item>
+    <ion-item>Polén <p item-end>3</p></ion-item>
+  </ion-item-group>
 
 
 
