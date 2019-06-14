@@ -15,7 +15,8 @@
   </ion-navbar>
 
   <ion-toolbar color="primary">
-    <ion-searchbar (input)="buscando = true" (ionInput)="buscar()" [(ngModel)]="termoBuscado" debounce="500" placeholder="Pesquisar..."></ion-searchbar>
+    <ion-searchbar (input)="buscando = true" (ionInput)="buscar()" [(ngModel)]="termoBuscado" debounce="500"
+      placeholder="Pesquisar..."></ion-searchbar>
   </ion-toolbar>
 
 </ion-header>
@@ -27,7 +28,17 @@
       <!-- <ion-avatar item-start>
         <img src="assets/imgs/img-pasto.jpg">
       </ion-avatar> -->
-      {{ item.nome}}
+      <!-- <ion-icon item-start name="funnel" ios="ios-funnel-outline"></ion-icon> -->
+      {{ item?.apiario?.nome}} - {{ item.nome}}
+      <br>
+      Ninhos: {{ item.quantidadeNinho }} | Melgueiras: {{ item.quantidadeMelgueira }}
+
+      <a href="javascript:;" item-end (click)="$event.stopPropagation()">
+        <ion-icon name="clipboard"  color="primary" (click)="revisao(item)"></ion-icon>
+
+      </a>
+
+
     </ion-item>
   </ion-list>
 
