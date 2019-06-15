@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Apiario, ApiarioApi } from '../../../app/shared/sdk';
+import moment from 'moment';
 
 /**
  * Generated class for the ApiarioListaPage page.
@@ -33,15 +34,13 @@ export class ApiarioListaPage {
   }
 
   buscar() {
-
     this.API.find({
       where: {
-        descricao: { like: this.termoBuscado, options: 'i' }
+        nome: { like: this.termoBuscado, options: 'i' }
       }
     }).subscribe(
       (data: Apiario[]) => {
         this.lista = data;
-
       }
     )
   }
@@ -52,6 +51,4 @@ export class ApiarioListaPage {
     else
       this.navCtrl.push('ApiarioFormPage');
   }
-
-
 }

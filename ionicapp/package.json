@@ -26,11 +26,12 @@
     "@ionic/storage": "2.2.0",
     "ionic-angular": "3.9.5",
     "ionicons": "3.0.0",
+    "moment": "^2.24.0",
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.5.2",
+    "socket.io-client": "^2.1.0",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.29",
-    "socket.io-client": "^2.1.0"
+    "zone.js": "0.8.29"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.2.2",
