@@ -38,10 +38,14 @@ export class FinanceiroListaPage {
     )
   }
 
-  abrir(item: Financeiro = null) {
+  abrir(eReceita:boolean, item: Financeiro = null) {   
     if (item)
-      this.navCtrl.push('FinanceiroFormPage', { item: item });
+    {  this.navCtrl.push('FinanceiroFormPage', { item: item});}
     else
-      this.navCtrl.push('FinanceiroFormPage');
-  }
+    {
+    if(eReceita)  {
+      this.navCtrl.push('FinanceiroFormPage',{eTituloReceber:true});}
+    else{
+      this.navCtrl.push('FinanceiroFormPage',{eTituloReceber:false});}
+   } }
 }
