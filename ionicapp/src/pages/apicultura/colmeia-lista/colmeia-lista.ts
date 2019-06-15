@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Colmeia, ColmeiaApi } from '../../../app/shared/sdk';
 
-/**
- * Generated class for the ColmeiaListaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-colmeia-lista',
@@ -51,9 +44,9 @@ export class ColmeiaListaPage {
       this.navCtrl.push('ColmeiaFormPage');
   }
 
-  revisao(item: Colmeia = null) {
-    if (item)
-      this.navCtrl.push('ColmeiaRevisaoListaPage', { item: item });
+  revisao(item: Colmeia = null, ev: any) {
+    ev.stopPropagation();
+    if (item) this.navCtrl.push('ColmeiaRevisaoListaPage', { item: item });
   }
 
 }
