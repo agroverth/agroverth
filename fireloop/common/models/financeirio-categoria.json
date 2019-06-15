@@ -1,5 +1,5 @@
 {
-  "name": "apiario",
+  "name": "financeirioCategoria",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for apiario registers.",
+        "description": "Statistical information for financeirioCategoria registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -27,17 +27,9 @@
     "nome": {
       "type": "string"
     },
-    "localizacao": {
-      "type": "string"
-    },
-    "especie": {
-      "type": "string"
-    },
     "ativo": {
-      "type": "boolean"
-    },
-    "dataCriacao": {
-      "type": "date"
+      "type": "boolean",
+      "default": true
     }
   },
   "validations": [],

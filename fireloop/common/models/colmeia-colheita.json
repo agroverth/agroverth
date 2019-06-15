@@ -1,0 +1,74 @@
+{
+  "name": "colmeiaColheita",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "FireLoop": true,
+    "TimeStamp": {
+      "required": false
+    },
+    "Stats": [
+      {
+        "method": "stats",
+        "endpoint": "/stats",
+        "description": "Statistical information for colmeiaColheita registers.",
+        "type": "model",
+        "count": {
+          "on": "createdAt",
+          "by": "index"
+        }
+      }
+    ]
+  },
+  "properties": {
+    "data": {
+      "type": "date"
+    },
+    "quantidadeNinhos": {
+      "type": "number"
+    },
+    "quantidadeMelgueiras": {
+      "type": "number"
+    },
+    "quantidadePropolis": {
+      "type": "number"
+    },
+    "quantidadeCera": {
+      "type": "number"
+    },
+    "quantidadePolen": {
+      "type": "number"
+    },
+    "quantidadeVazios": {
+      "type": "number"
+    },
+    "quantidadeOvos": {
+      "type": "number"
+    },
+    "quantidadeLarvas": {
+      "type": "number"
+    },
+    "quantidadePupasOperarias": {
+      "type": "number"
+    },
+    "quantidadePupasZangoes": {
+      "type": "number"
+    },
+    "existeRealeira": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "colmeia": {
+      "type": "belongsTo",
+      "model": "colmeia",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

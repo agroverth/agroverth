@@ -1,5 +1,5 @@
 {
-  "name": "apiario",
+  "name": "financeirio",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for apiario registers.",
+        "description": "Statistical information for financeirio registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -27,21 +27,35 @@
     "nome": {
       "type": "string"
     },
-    "localizacao": {
-      "type": "string"
+    "valor": {
+      "type": "number"
     },
-    "especie": {
-      "type": "string"
+    "dataVencimento": {
+      "type": "date"
     },
-    "ativo": {
+    "dataPagamento": {
+      "type": "date"
+    },
+    "eTituloReceber": {
       "type": "boolean"
     },
-    "dataCriacao": {
-      "type": "date"
+    "eTituloQuitado": {
+      "type": "boolean"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "categoria": {
+      "type": "belongsTo",
+      "model": "financeirioCategoria",
+      "foreignKey": ""
+    },
+    "pessoa": {
+      "type": "belongsTo",
+      "model": "pessoa",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
