@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Apiario } from '../../../app/shared/sdk';
+import { Colmeia, ColmeiaApi } from '../../../app/shared/sdk';
 
 /**
  * Generated class for the ColmeiaListaPage page.
@@ -18,13 +18,37 @@ export class ColmeiaListaPage {
 
   public buscando: boolean = false;
   public termoBuscado: string = '';
-  public lista: Apiario[];
+  public lista: Colmeia[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public API: ColmeiaApi) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ColmeiaListaPage');
+    // this.buscar();
+  }
+
+  ionViewDidEnter() {
+    this.buscar();
+  }
+
+  buscar() {
+    this.API.find({
+      where: {
+        nome: { like: this.termoBuscado, options: 'i' }
+      },
+      include:'apiario'
+    }).subscribe(
+      (data: Colmeia[]) => {
+        this.lista = data;
+      }
+    )
+  }
+
+  abrir(item: Colmeia = null) {
+    if (item)
+      this.navCtrl.push('ColmeiaFormPage', { item: item });
+    else
+      this.navCtrl.push('ColmeiaFormPage');
   }
 
 }
