@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Apiario } from '../../../app/shared/sdk';
 
 /**
  * Generated class for the ColmeiaListaPage page.
@@ -14,6 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'colmeia-lista.html',
 })
 export class ColmeiaListaPage {
+
+  public buscando: boolean = false;
+  public termoBuscado: string = '';
+  public lista: Apiario[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

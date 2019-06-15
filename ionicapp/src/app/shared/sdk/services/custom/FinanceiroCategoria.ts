@@ -9,17 +9,15 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Financeirio } from '../../models/Financeirio';
+import { FinanceiroCategoria } from '../../models/FinanceiroCategoria';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { FinanceirioCategoria } from '../../models/FinanceirioCategoria';
-import { Pessoa } from '../../models/Pessoa';
 
 
 /**
- * Api services for the `Financeirio` model.
+ * Api services for the `FinanceiroCategoria` model.
  */
 @Injectable()
-export class FinanceirioApi extends BaseLoopBackApi {
+export class FinanceiroCategoriaApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -29,66 +27,6 @@ export class FinanceirioApi extends BaseLoopBackApi {
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
     super(http,  connection,  models, auth, errorHandler);
-  }
-
-  /**
-   * Busca relação categoria de belongsTo.
-   *
-   * @param {any} id financeirio id
-   *
-   * @param {boolean} refresh 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `Financeirio` object.)
-   * </em>
-   */
-  public getCategoria(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/financeirios/:id/categoria";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Busca relação pessoa de belongsTo.
-   *
-   * @param {any} id financeirio id
-   *
-   * @param {boolean} refresh 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `Financeirio` object.)
-   * </em>
-   */
-  public getPessoa(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/financeirios/:id/pessoa";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
   }
 
   /**
@@ -104,13 +42,13 @@ export class FinanceirioApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Financeirio` object.)
+   * This usually means the response is a `FinanceiroCategoria` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/financeirios";
+    "/financeiroCategoria";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -123,7 +61,7 @@ export class FinanceirioApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id financeirio id
+   * @param {any} id financeiroCategoria id
    *
    * @param {object} data Request data.
    *
@@ -135,13 +73,13 @@ export class FinanceirioApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Financeirio` object.)
+   * This usually means the response is a `FinanceiroCategoria` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/financeirios/:id";
+    "/financeiroCategoria/:id";
     let _routeParams: any = {
       id: id
     };
@@ -169,7 +107,7 @@ export class FinanceirioApi extends BaseLoopBackApi {
   public myRemote(customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/financeirios/my-remote";
+    "/financeiroCategoria/my-remote";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
@@ -178,7 +116,7 @@ export class FinanceirioApi extends BaseLoopBackApi {
   }
 
   /**
-   * Statistical information for financeirio registers.
+   * Statistical information for financeiroCategoria registers.
    *
    * @param {string} range hourly, daily, weekly, monthly, yearly, custom
    *
@@ -194,13 +132,13 @@ export class FinanceirioApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Financeirio` object.)
+   * This usually means the response is a `FinanceiroCategoria` object.)
    * </em>
    */
   public stats(range: any, custom: any = {}, where: any = {}, groupBy: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/financeirios/stats";
+    "/financeiroCategoria/stats";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
@@ -214,9 +152,9 @@ export class FinanceirioApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Financeirio`.
+   * i.e. `FinanceiroCategoria`.
    */
   public getModelName() {
-    return "Financeirio";
+    return "FinanceiroCategoria";
   }
 }

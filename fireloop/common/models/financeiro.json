@@ -1,5 +1,5 @@
 {
-  "name": "financeirio",
+  "name": "financeiro",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for financeirio registers.",
+        "description": "Statistical information for financeiro registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -44,18 +44,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "categoria": {
-      "type": "belongsTo",
-      "model": "financeirioCategoria",
-      "foreignKey": ""
-    },
-    "pessoa": {
-      "type": "belongsTo",
-      "model": "pessoa",
-      "foreignKey": ""
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

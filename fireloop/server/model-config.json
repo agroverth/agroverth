@@ -54,16 +54,16 @@
   "pessoa": {
     "dataSource": "db",
     "public": true
-  },
-  "financeirioCategoria": {
-    "dataSource": "db",
-    "public": true
-  },
-  "financeirio": {
-    "dataSource": "db",
-    "public": true
-  },
+  },  
   "colmeriaAnaliseFavo": {
+    "dataSource": "db",
+    "public": true
+  },
+  "financeiro": {
+    "dataSource": "db",
+    "public": true
+  },
+  "financeiroCategoria": {
     "dataSource": "db",
     "public": true
   }

@@ -1,11 +1,7 @@
 /* tslint:disable */
-import {
-  FinanceirioCategoria,
-  Pessoa
-} from '../index';
 
 declare var Object: any;
-export interface FinanceirioInterface {
+export interface FinanceiroInterface {
   "nome"?: string;
   "valor"?: number;
   "dataVencimento"?: Date;
@@ -13,15 +9,11 @@ export interface FinanceirioInterface {
   "eTituloReceber"?: boolean;
   "eTituloQuitado"?: boolean;
   "id"?: any;
-  "categoriaId"?: any;
-  "pessoaId"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
-  categoria?: FinanceirioCategoria;
-  pessoa?: Pessoa;
 }
 
-export class Financeirio implements FinanceirioInterface {
+export class Financeiro implements FinanceiroInterface {
   "nome": string;
   "valor": number;
   "dataVencimento": Date;
@@ -29,30 +21,26 @@ export class Financeirio implements FinanceirioInterface {
   "eTituloReceber": boolean;
   "eTituloQuitado": boolean;
   "id": any;
-  "categoriaId": any;
-  "pessoaId": any;
   "createdAt": Date;
   "updatedAt": Date;
-  categoria: FinanceirioCategoria;
-  pessoa: Pessoa;
-  constructor(data?: FinanceirioInterface) {
+  constructor(data?: FinanceiroInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Financeirio`.
+   * i.e. `Financeiro`.
    */
   public static getModelName() {
-    return "Financeirio";
+    return "Financeiro";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of Financeirio for dynamic purposes.
+  * This method creates an instance of Financeiro for dynamic purposes.
   **/
-  public static factory(data: FinanceirioInterface): Financeirio{
-    return new Financeirio(data);
+  public static factory(data: FinanceiroInterface): Financeiro{
+    return new Financeiro(data);
   }
   /**
   * @method getModelDefinition
@@ -63,9 +51,9 @@ export class Financeirio implements FinanceirioInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'Financeirio',
-      plural: 'Financeirios',
-      path: 'Financeirios',
+      name: 'Financeiro',
+      plural: 'Financeiros',
+      path: 'Financeiros',
       idName: 'id',
       properties: {
         "nome": {
@@ -96,14 +84,6 @@ export class Financeirio implements FinanceirioInterface {
           name: 'id',
           type: 'any'
         },
-        "categoriaId": {
-          name: 'categoriaId',
-          type: 'any'
-        },
-        "pessoaId": {
-          name: 'pessoaId',
-          type: 'any'
-        },
         "createdAt": {
           name: 'createdAt',
           type: 'Date'
@@ -114,22 +94,6 @@ export class Financeirio implements FinanceirioInterface {
         },
       },
       relations: {
-        categoria: {
-          name: 'categoria',
-          type: 'FinanceirioCategoria',
-          model: 'FinanceirioCategoria',
-          relationType: 'belongsTo',
-                  keyFrom: 'categoriaId',
-          keyTo: 'id'
-        },
-        pessoa: {
-          name: 'pessoa',
-          type: 'Pessoa',
-          model: 'Pessoa',
-          relationType: 'belongsTo',
-                  keyFrom: 'pessoaId',
-          keyTo: 'id'
-        },
       }
     }
   }

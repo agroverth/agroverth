@@ -1,8 +1,8 @@
 import { Model } from '@mean-expert/model';
 /**
- * @module financeirioCategoria
+ * @module financeiro
  * @description
- * Write a useful financeirioCategoria Model description.
+ * Write a useful financeiro Model description.
  * Register hooks and remote methods within the
  * Model Decorator
  **/
@@ -18,13 +18,13 @@ import { Model } from '@mean-expert/model';
   }
 })
 
-class financeirioCategoria {
+class financeiro {
   // LoopBack model instance is injected in constructor
   constructor(public model: any) {}
 
   // Example Operation Hook
   beforeSave(ctx: any, next: Function): void {
-    console.log('financeirioCategoria: Before Save');
+    console.log('financeiro: Before Save');
     next();
   }
   // Example Remote Method
@@ -33,4 +33,4 @@ class financeirioCategoria {
   }
 }
 
-module.exports = financeirioCategoria;
+module.exports = financeiro;

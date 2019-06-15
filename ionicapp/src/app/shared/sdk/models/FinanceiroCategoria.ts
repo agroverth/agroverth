@@ -1,7 +1,7 @@
 /* tslint:disable */
 
 declare var Object: any;
-export interface FinanceirioCategoriaInterface {
+export interface FinanceiroCategoriaInterface {
   "nome"?: string;
   "ativo"?: boolean;
   "id"?: any;
@@ -9,30 +9,30 @@ export interface FinanceirioCategoriaInterface {
   "updatedAt"?: Date;
 }
 
-export class FinanceirioCategoria implements FinanceirioCategoriaInterface {
+export class FinanceiroCategoria implements FinanceiroCategoriaInterface {
   "nome": string;
   "ativo": boolean;
   "id": any;
   "createdAt": Date;
   "updatedAt": Date;
-  constructor(data?: FinanceirioCategoriaInterface) {
+  constructor(data?: FinanceiroCategoriaInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `FinanceirioCategoria`.
+   * i.e. `FinanceiroCategoria`.
    */
   public static getModelName() {
-    return "FinanceirioCategoria";
+    return "FinanceiroCategoria";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of FinanceirioCategoria for dynamic purposes.
+  * This method creates an instance of FinanceiroCategoria for dynamic purposes.
   **/
-  public static factory(data: FinanceirioCategoriaInterface): FinanceirioCategoria{
-    return new FinanceirioCategoria(data);
+  public static factory(data: FinanceiroCategoriaInterface): FinanceiroCategoria{
+    return new FinanceiroCategoria(data);
   }
   /**
   * @method getModelDefinition
@@ -43,9 +43,9 @@ export class FinanceirioCategoria implements FinanceirioCategoriaInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'FinanceirioCategoria',
-      plural: 'FinanceirioCategoria',
-      path: 'FinanceirioCategoria',
+      name: 'FinanceiroCategoria',
+      plural: 'FinanceiroCategoria',
+      path: 'FinanceiroCategoria',
       idName: 'id',
       properties: {
         "nome": {

@@ -54,9 +54,9 @@ import { ColmeiaApi } from './services/custom/Colmeia';
 import { ColmeiaRevisaoApi } from './services/custom/ColmeiaRevisao';
 import { ColmeiaColheitaApi } from './services/custom/ColmeiaColheita';
 import { PessoaApi } from './services/custom/Pessoa';
-import { FinanceirioCategoriaApi } from './services/custom/FinanceirioCategoria';
-import { FinanceirioApi } from './services/custom/Financeirio';
 import { ColmeriaAnaliseFavoApi } from './services/custom/ColmeriaAnaliseFavo';
+import { FinanceiroApi } from './services/custom/Financeiro';
+import { FinanceiroCategoriaApi } from './services/custom/FinanceiroCategoria';
 /**
 * @module SDKBrowserModule
 * @description
@@ -93,9 +93,9 @@ export class SDKBrowserModule {
         ColmeiaRevisaoApi,
         ColmeiaColheitaApi,
         PessoaApi,
-        FinanceirioCategoriaApi,
-        FinanceirioApi,
         ColmeriaAnaliseFavoApi,
+        FinanceiroApi,
+        FinanceiroCategoriaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }
