@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the FinanceiroCategoriaListaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FinanceiroCategoria, FinanceiroCategoriaApi } from '../../../app/shared/sdk';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FinanceiroCategoriaListaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public buscando: boolean = false;
+  public termoBuscado: string = '';
+  public lista: FinanceiroCategoria[];
+
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+      public API: FinanceiroCategoriaApi) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FinanceiroCategoriaListaPage');
   }
 
+  ionViewDidEnter() {
+    this.buscar();
+  }
+
+  buscar() {
+
+    this.API.find({
+      where: {
+        descricao: { like: this.termoBuscado, options: 'i' }
+      }
+    }).subscribe(
+      (data: FinanceiroCategoria[]) => {
+        this.lista = data;
+
+      }
+    )
+  }
+
+  abrir(item: FinanceiroCategoria = null) {
+    if (item)
+      this.navCtrl.push('FinanceiroCategoriaFormPage', { item: item });
+    else
+      this.navCtrl.push('FinanceiroCategoriaFormPage');
+  }
 }
