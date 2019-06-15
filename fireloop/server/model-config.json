@@ -62,5 +62,9 @@
   "financeirio": {
     "dataSource": "db",
     "public": true
+  },
+  "colmeriaAnaliseFavo": {
+    "dataSource": "db",
+    "public": true
   }
 }

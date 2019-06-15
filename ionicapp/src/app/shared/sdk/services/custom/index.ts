@@ -7,5 +7,6 @@ export * from './ColmeiaColheita';
 export * from './Pessoa';
 export * from './FinanceirioCategoria';
 export * from './Financeirio';
+export * from './ColmeriaAnaliseFavo';
 export * from './SDKModels';
 export * from './logger.service';

@@ -9,7 +9,7 @@ export interface PessoaInterface {
   "eCliente"?: boolean;
   "eFornecedor"?: boolean;
   "ativo"?: boolean;
-  "id"?: number;
+  "id"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
 }
@@ -22,7 +22,7 @@ export class Pessoa implements PessoaInterface {
   "eCliente": boolean;
   "eFornecedor": boolean;
   "ativo": boolean;
-  "id": number;
+  "id": any;
   "createdAt": Date;
   "updatedAt": Date;
   constructor(data?: PessoaInterface) {
@@ -88,7 +88,7 @@ export class Pessoa implements PessoaInterface {
         },
         "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
         "createdAt": {
           name: 'createdAt',

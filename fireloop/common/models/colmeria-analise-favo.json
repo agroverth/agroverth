@@ -1,5 +1,5 @@
 {
-  "name": "colmeiaColheita",
+  "name": "colmeriaAnaliseFavo",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for colmeiaColheita registers.",
+        "description": "Statistical information for colmeriaAnaliseFavo registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -24,23 +24,23 @@
     ]
   },
   "properties": {
-    "data": {
-      "type": "date"
-    },
-    "quantidadeNinhos": {
+    "quantidadeVazios": {
       "type": "number"
     },
-    "quantidadeMelgueiras": {
+    "quantidadeOvos": {
       "type": "number"
     },
-    "quantidadePropolis": {
+    "quantidadeLarvas": {
       "type": "number"
     },
-    "quantidadeCera": {
+    "quantidadePupasOperarias": {
       "type": "number"
     },
-    "quantidadePolen": {
+    "quantidadePupasZangoes": {
       "type": "number"
+    },
+    "existeRealeira": {
+      "type": "boolean"
     }
   },
   "validations": [],

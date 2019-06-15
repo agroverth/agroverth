@@ -21,8 +21,8 @@ export interface ColmeiaRevisaoInterface {
   "quantiadeTelaNinhoTrocadas"?: number;
   "quantiadeTelaMelgueiraTrocadas"?: number;
   "quantiadeQuadroPropolisTrocados"?: number;
-  "id"?: number;
-  "colmeiaId"?: number;
+  "id"?: any;
+  "colmeiaId"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
   colmeia?: Colmeia;
@@ -45,8 +45,8 @@ export class ColmeiaRevisao implements ColmeiaRevisaoInterface {
   "quantiadeTelaNinhoTrocadas": number;
   "quantiadeTelaMelgueiraTrocadas": number;
   "quantiadeQuadroPropolisTrocados": number;
-  "id": number;
-  "colmeiaId": number;
+  "id": any;
+  "colmeiaId": any;
   "createdAt": Date;
   "updatedAt": Date;
   colmeia: Colmeia;
@@ -149,11 +149,11 @@ export class ColmeiaRevisao implements ColmeiaRevisaoInterface {
         },
         "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
         "colmeiaId": {
           name: 'colmeiaId',
-          type: 'number'
+          type: 'any'
         },
         "createdAt": {
           name: 'createdAt',

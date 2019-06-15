@@ -12,9 +12,9 @@ export interface FinanceirioInterface {
   "dataPagamento"?: Date;
   "eTituloReceber"?: boolean;
   "eTituloQuitado"?: boolean;
-  "id"?: number;
-  "categoriaId"?: number;
-  "pessoaId"?: number;
+  "id"?: any;
+  "categoriaId"?: any;
+  "pessoaId"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
   categoria?: FinanceirioCategoria;
@@ -28,9 +28,9 @@ export class Financeirio implements FinanceirioInterface {
   "dataPagamento": Date;
   "eTituloReceber": boolean;
   "eTituloQuitado": boolean;
-  "id": number;
-  "categoriaId": number;
-  "pessoaId": number;
+  "id": any;
+  "categoriaId": any;
+  "pessoaId": any;
   "createdAt": Date;
   "updatedAt": Date;
   categoria: FinanceirioCategoria;
@@ -94,15 +94,15 @@ export class Financeirio implements FinanceirioInterface {
         },
         "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
         "categoriaId": {
           name: 'categoriaId',
-          type: 'number'
+          type: 'any'
         },
         "pessoaId": {
           name: 'pessoaId',
-          type: 'number'
+          type: 'any'
         },
         "createdAt": {
           name: 'createdAt',
