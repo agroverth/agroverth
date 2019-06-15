@@ -7,7 +7,7 @@ export interface ApiarioInterface {
   "especie"?: string;
   "ativo"?: boolean;
   "dataCriacao"?: Date;
-  "id"?: number;
+  "id"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
 }
@@ -18,7 +18,7 @@ export class Apiario implements ApiarioInterface {
   "especie": string;
   "ativo": boolean;
   "dataCriacao": Date;
-  "id": number;
+  "id": any;
   "createdAt": Date;
   "updatedAt": Date;
   constructor(data?: ApiarioInterface) {
@@ -76,7 +76,7 @@ export class Apiario implements ApiarioInterface {
         },
         "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
         "createdAt": {
           name: 'createdAt',

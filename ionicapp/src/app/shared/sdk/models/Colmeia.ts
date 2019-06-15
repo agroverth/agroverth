@@ -9,8 +9,8 @@ export interface ColmeiaInterface {
   "nome"?: string;
   "quantidadeNinho"?: number;
   "quantidadeMelgueira"?: number;
-  "id"?: number;
-  "apiarioId"?: number;
+  "id"?: any;
+  "apiarioId"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
   apiario?: Apiario;
@@ -21,8 +21,8 @@ export class Colmeia implements ColmeiaInterface {
   "nome": string;
   "quantidadeNinho": number;
   "quantidadeMelgueira": number;
-  "id": number;
-  "apiarioId": number;
+  "id": any;
+  "apiarioId": any;
   "createdAt": Date;
   "updatedAt": Date;
   apiario: Apiario;
@@ -77,11 +77,11 @@ export class Colmeia implements ColmeiaInterface {
         },
         "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
         "apiarioId": {
           name: 'apiarioId',
-          type: 'number'
+          type: 'any'
         },
         "createdAt": {
           name: 'createdAt',

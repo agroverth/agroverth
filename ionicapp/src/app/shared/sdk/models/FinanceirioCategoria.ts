@@ -4,7 +4,7 @@ declare var Object: any;
 export interface FinanceirioCategoriaInterface {
   "nome"?: string;
   "ativo"?: boolean;
-  "id"?: number;
+  "id"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
 }
@@ -12,7 +12,7 @@ export interface FinanceirioCategoriaInterface {
 export class FinanceirioCategoria implements FinanceirioCategoriaInterface {
   "nome": string;
   "ativo": boolean;
-  "id": number;
+  "id": any;
   "createdAt": Date;
   "updatedAt": Date;
   constructor(data?: FinanceirioCategoriaInterface) {
@@ -59,7 +59,7 @@ export class FinanceirioCategoria implements FinanceirioCategoriaInterface {
         },
         "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
         "createdAt": {
           name: 'createdAt',

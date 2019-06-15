@@ -4,13 +4,13 @@ import {
 } from '../index';
 
 declare var Object: any;
-export interface ColmeiaColheitaInterface {
-  "data"?: Date;
-  "quantidadeNinhos"?: number;
-  "quantidadeMelgueiras"?: number;
-  "quantidadePropolis"?: number;
-  "quantidadeCera"?: number;
-  "quantidadePolen"?: number;
+export interface ColmeriaAnaliseFavoInterface {
+  "quantidadeVazios"?: number;
+  "quantidadeOvos"?: number;
+  "quantidadeLarvas"?: number;
+  "quantidadePupasOperarias"?: number;
+  "quantidadePupasZangoes"?: number;
+  "existeRealeira"?: boolean;
   "id"?: any;
   "colmeiaId"?: any;
   "createdAt"?: Date;
@@ -18,36 +18,36 @@ export interface ColmeiaColheitaInterface {
   colmeia?: Colmeia;
 }
 
-export class ColmeiaColheita implements ColmeiaColheitaInterface {
-  "data": Date;
-  "quantidadeNinhos": number;
-  "quantidadeMelgueiras": number;
-  "quantidadePropolis": number;
-  "quantidadeCera": number;
-  "quantidadePolen": number;
+export class ColmeriaAnaliseFavo implements ColmeriaAnaliseFavoInterface {
+  "quantidadeVazios": number;
+  "quantidadeOvos": number;
+  "quantidadeLarvas": number;
+  "quantidadePupasOperarias": number;
+  "quantidadePupasZangoes": number;
+  "existeRealeira": boolean;
   "id": any;
   "colmeiaId": any;
   "createdAt": Date;
   "updatedAt": Date;
   colmeia: Colmeia;
-  constructor(data?: ColmeiaColheitaInterface) {
+  constructor(data?: ColmeriaAnaliseFavoInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `ColmeiaColheita`.
+   * i.e. `ColmeriaAnaliseFavo`.
    */
   public static getModelName() {
-    return "ColmeiaColheita";
+    return "ColmeriaAnaliseFavo";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of ColmeiaColheita for dynamic purposes.
+  * This method creates an instance of ColmeriaAnaliseFavo for dynamic purposes.
   **/
-  public static factory(data: ColmeiaColheitaInterface): ColmeiaColheita{
-    return new ColmeiaColheita(data);
+  public static factory(data: ColmeriaAnaliseFavoInterface): ColmeriaAnaliseFavo{
+    return new ColmeriaAnaliseFavo(data);
   }
   /**
   * @method getModelDefinition
@@ -58,34 +58,34 @@ export class ColmeiaColheita implements ColmeiaColheitaInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'ColmeiaColheita',
-      plural: 'ColmeiaColheita',
-      path: 'ColmeiaColheita',
+      name: 'ColmeriaAnaliseFavo',
+      plural: 'ColmeriaAnaliseFavos',
+      path: 'ColmeriaAnaliseFavos',
       idName: 'id',
       properties: {
-        "data": {
-          name: 'data',
-          type: 'Date'
-        },
-        "quantidadeNinhos": {
-          name: 'quantidadeNinhos',
+        "quantidadeVazios": {
+          name: 'quantidadeVazios',
           type: 'number'
         },
-        "quantidadeMelgueiras": {
-          name: 'quantidadeMelgueiras',
+        "quantidadeOvos": {
+          name: 'quantidadeOvos',
           type: 'number'
         },
-        "quantidadePropolis": {
-          name: 'quantidadePropolis',
+        "quantidadeLarvas": {
+          name: 'quantidadeLarvas',
           type: 'number'
         },
-        "quantidadeCera": {
-          name: 'quantidadeCera',
+        "quantidadePupasOperarias": {
+          name: 'quantidadePupasOperarias',
           type: 'number'
         },
-        "quantidadePolen": {
-          name: 'quantidadePolen',
+        "quantidadePupasZangoes": {
+          name: 'quantidadePupasZangoes',
           type: 'number'
+        },
+        "existeRealeira": {
+          name: 'existeRealeira',
+          type: 'boolean'
         },
         "id": {
           name: 'id',
