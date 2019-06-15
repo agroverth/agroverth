@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Apiario, ApiarioApi } from '../../app/shared/sdk';
+import { Apiario, ApiarioApi } from '../../../app/shared/sdk';
 
 /**
  * Generated class for the ApiarioListaPage page.
