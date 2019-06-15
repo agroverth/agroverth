@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Apiario, ApiarioApi } from '../../../app/shared/sdk';
-import moment = require('moment');
+import moment from 'moment';
 
 /**
  * Generated class for the ApiarioFormPage page.
@@ -24,11 +24,16 @@ export class ApiarioFormPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public API: ApiarioApi) {
     let item = navParams.get('item');
-    if (item) this.dadosDoForm = Object.assign(new Apiario, item);
+    if (item) {
+      this.dadosDoForm = Object.assign(new Apiario, item);
+      this.data = moment(this.dadosDoForm.dataCriacao).format('YYYY-MM-DD');
+      console.log(this.data);
+    }
     else {
       this.dadosDoForm.dataCriacao = new Date();
+      this.data = moment(this.dadosDoForm.dataCriacao).format('YYYY-MM-DD');
+      console.log(this.data);
     }
-    this.data = moment(this.dadosDoForm.dataCriacao).format('YYYY-MM-DD');
 
   }
 
