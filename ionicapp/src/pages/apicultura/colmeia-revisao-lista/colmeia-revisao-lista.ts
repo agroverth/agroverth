@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Colmeia, ColmeiaRevisao, ColmeiaRevisaoApi } from '../../../app/shared/sdk';
+// import bson from 'bson';
 
 /**
  * Generated class for the ColmeiaRevisaoListaPage page.

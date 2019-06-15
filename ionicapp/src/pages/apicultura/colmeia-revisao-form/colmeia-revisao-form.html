@@ -22,9 +22,15 @@
     <ion-input type="text" readonly="readonly" [value]="colmeia?.apiario?.nome  +'-'+  colmeia?.nome"></ion-input>
     <br>
   </ion-item>
-  <ion-item-divider sticky>
+  <ion-item-divider>
     <b>Melgueiras:</b> {{colmeia?.quantidadeMelgueira}} | <b>Ninhos:</b> {{ colmeia?.quantidadeNinho}}
   </ion-item-divider>
+
+  <ion-item>
+    <ion-icon color="primary" name="cube" item-start></ion-icon>
+    <ion-label stacked>Data</ion-label>
+    <ion-input type="date" [(ngModel)]="data"></ion-input>
+  </ion-item>
 
   <ion-item>
     <ion-icon color="primary" name="cube" item-start></ion-icon>
@@ -33,16 +39,15 @@
       <div class="quantidades">
         <div>
           <div class="buttons">
-            <button ion-button icon-only (click)="addUm('quantidadeOvo')"
-              class="btnMais" >
+            <button ion-button icon-only (click)="addUm('quantidadeOvo')" class="btnMais">
               <ion-icon name="add"></ion-icon>
             </button>
-            <button ion-button icon-only (click)="subUm('quantidadeOvo')"
-              class="btnMenos">
+            <button ion-button icon-only (click)="subUm('quantidadeOvo')" class="btnMenos">
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeOvo" (input)="calcularTotais()" (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeOvo" (input)="calcularTotais()"
+            (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -54,16 +59,15 @@
       <div class="quantidades">
         <div>
           <div class="buttons">
-            <button ion-button icon-only (click)="addUm('quantidadeLarva')"
-              class="btnMais" >
+            <button ion-button icon-only (click)="addUm('quantidadeLarva')" class="btnMais">
               <ion-icon name="add"></ion-icon>
             </button>
-            <button ion-button icon-only (click)="subUm('quantidadeLarva')"
-              class="btnMenos">
+            <button ion-button icon-only (click)="subUm('quantidadeLarva')" class="btnMenos">
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeLarva" (input)="calcularTotais()" (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeLarva" (input)="calcularTotais()"
+            (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -75,16 +79,15 @@
       <div class="quantidades">
         <div>
           <div class="buttons">
-            <button ion-button icon-only (click)="addUm('quantidadePupa')"
-              class="btnMais" >
+            <button ion-button icon-only (click)="addUm('quantidadePupa')" class="btnMais">
               <ion-icon name="add"></ion-icon>
             </button>
-            <button ion-button icon-only (click)="subUm('quantidadePupa')"
-              class="btnMenos">
+            <button ion-button icon-only (click)="subUm('quantidadePupa')" class="btnMenos">
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePupa" (input)="calcularTotais()" (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePupa" (input)="calcularTotais()"
+            (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -96,16 +99,15 @@
       <div class="quantidades">
         <div>
           <div class="buttons">
-            <button ion-button icon-only (click)="addUm('quantidadePupaZangao')"
-              class="btnMais" >
+            <button ion-button icon-only (click)="addUm('quantidadePupaZangao')" class="btnMais">
               <ion-icon name="add"></ion-icon>
             </button>
-            <button ion-button icon-only (click)="subUm('quantidadePupaZangao')"
-              class="btnMenos">
+            <button ion-button icon-only (click)="subUm('quantidadePupaZangao')" class="btnMenos">
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePupaZangao" (input)="calcularTotais()" (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePupaZangao" (input)="calcularTotais()"
+            (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -117,16 +119,15 @@
       <div class="quantidades">
         <div>
           <div class="buttons">
-            <button ion-button icon-only (click)="addUm('quantidadePolen')"
-              class="btnMais" >
+            <button ion-button icon-only (click)="addUm('quantidadePolen')" class="btnMais">
               <ion-icon name="add"></ion-icon>
             </button>
-            <button ion-button icon-only (click)="subUm('quantidadePolen')"
-              class="btnMenos">
+            <button ion-button icon-only (click)="subUm('quantidadePolen')" class="btnMenos">
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePolen" (input)="calcularTotais()" (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePolen" (input)="calcularTotais()"
+            (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -138,16 +139,15 @@
       <div class="quantidades">
         <div>
           <div class="buttons">
-            <button ion-button icon-only (click)="addUm('quantidadeNectar')"
-              class="btnMais" >
+            <button ion-button icon-only (click)="addUm('quantidadeNectar')" class="btnMais">
               <ion-icon name="add"></ion-icon>
             </button>
-            <button ion-button icon-only (click)="subUm('quantidadeNectar')"
-              class="btnMenos">
+            <button ion-button icon-only (click)="subUm('quantidadeNectar')" class="btnMenos">
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeNectar" (input)="calcularTotais()" (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeNectar" (input)="calcularTotais()"
+            (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -159,19 +159,29 @@
       <div class="quantidades">
         <div>
           <div class="buttons">
-            <button ion-button icon-only (click)="addUm('quantidadeMel')"
-              class="btnMais" >
+            <button ion-button icon-only (click)="addUm('quantidadeMel')" class="btnMais">
               <ion-icon name="add"></ion-icon>
             </button>
-            <button ion-button icon-only (click)="subUm('quantidadeMel')"
-              class="btnMenos">
+            <button ion-button icon-only (click)="subUm('quantidadeMel')" class="btnMenos">
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeMel" (input)="calcularTotais()" (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeMel" (input)="calcularTotais()"
+            (blur)="calcularTotais()">
         </div>
       </div>
     </div>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Possui Ocorrências?</ion-label>
+    <ion-toggle checked="false" [(ngModel)]="dadosDoForm.temOcorrencia"></ion-toggle>
+  </ion-item>
+
+  <ion-item *ngIf="dadosDoForm.temOcorrencia">
+    <ion-icon color="primary" name="cube" item-start></ion-icon>
+    <ion-label stacked>Detalhes da Ocorrência</ion-label>
+    <ion-textarea [(ngModel)]="dadosDoForm.ocorrencia"></ion-textarea>
   </ion-item>
 
 </ion-content>

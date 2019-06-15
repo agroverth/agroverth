@@ -9,6 +9,13 @@ export interface ColmeiaInterface {
   "nome"?: string;
   "quantidadeNinho"?: number;
   "quantidadeMelgueira"?: number;
+  "quantidadeOvo"?: number;
+  "quantidadeLarva"?: number;
+  "quantidadePupa"?: number;
+  "quantidadePupaZangao"?: number;
+  "quantidadePolen"?: number;
+  "quantidadeNectar"?: number;
+  "quantidadeMel"?: number;
   "id"?: any;
   "apiarioId"?: any;
   "createdAt"?: Date;
@@ -21,6 +28,13 @@ export class Colmeia implements ColmeiaInterface {
   "nome": string;
   "quantidadeNinho": number;
   "quantidadeMelgueira": number;
+  "quantidadeOvo": number;
+  "quantidadeLarva": number;
+  "quantidadePupa": number;
+  "quantidadePupaZangao": number;
+  "quantidadePolen": number;
+  "quantidadeNectar": number;
+  "quantidadeMel": number;
   "id": any;
   "apiarioId": any;
   "createdAt": Date;
@@ -73,6 +87,34 @@ export class Colmeia implements ColmeiaInterface {
         },
         "quantidadeMelgueira": {
           name: 'quantidadeMelgueira',
+          type: 'number'
+        },
+        "quantidadeOvo": {
+          name: 'quantidadeOvo',
+          type: 'number'
+        },
+        "quantidadeLarva": {
+          name: 'quantidadeLarva',
+          type: 'number'
+        },
+        "quantidadePupa": {
+          name: 'quantidadePupa',
+          type: 'number'
+        },
+        "quantidadePupaZangao": {
+          name: 'quantidadePupaZangao',
+          type: 'number'
+        },
+        "quantidadePolen": {
+          name: 'quantidadePolen',
+          type: 'number'
+        },
+        "quantidadeNectar": {
+          name: 'quantidadeNectar',
+          type: 'number'
+        },
+        "quantidadeMel": {
+          name: 'quantidadeMel',
           type: 'number'
         },
         "id": {

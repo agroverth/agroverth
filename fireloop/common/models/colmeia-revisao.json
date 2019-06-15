@@ -71,6 +71,33 @@
     },
     "quantiadeQuadroPropolisTrocados": {
       "type": "number"
+    },
+    "quantidadeOvo": {
+      "type": "number"
+    },
+    "quantidadeLarva": {
+      "type": "number"
+    },
+    "quantidadePupa": {
+      "type": "number"
+    },
+    "quantidadePupaZangao": {
+      "type": "number"
+    },
+    "quantidadePolen": {
+      "type": "number"
+    },
+    "quantidadeNectar": {
+      "type": "number"
+    },
+    "quantidadeMel": {
+      "type": "number"
+    },
+    "temOcorrencia": {
+      "type": "string"
+    },
+    "ocorrencia": {
+      "type": "string"
     }
   },
   "validations": [],
