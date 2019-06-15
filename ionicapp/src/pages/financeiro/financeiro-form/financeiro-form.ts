@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Financeiro, FinanceiroApi, FinanceiroCategoria, FinanceiroCategoriaApi } from '../../../app/shared/sdk';
+import { Financeiro, FinanceiroApi, FinanceiroCategoria, FinanceiroCategoriaApi, PessoaApi, Pessoa } from '../../../app/shared/sdk';
 
 @IonicPage()
 @Component({
@@ -11,12 +11,14 @@ export class FinanceiroFormPage {
 
   public dadosDoForm: Financeiro = new Financeiro();
   listaCategorias: FinanceiroCategoria[];
+  listaPessoas: Pessoa[];
   eTituloReceber: boolean;
   
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      public API: FinanceiroApi,
-     public categoriaApi: FinanceiroCategoriaApi) {
+     public categoriaApi: FinanceiroCategoriaApi,
+     public pessoaApi: PessoaApi) {
   
     let item = navParams.get('item');
     this.eTituloReceber = navParams.get('eTituloReceber');
@@ -35,6 +37,11 @@ export class FinanceiroFormPage {
       (retorno: FinanceiroCategoria[]) => {
         this.listaCategorias = retorno;        
       })
+
+      this.pessoaApi.find().subscribe(
+        (retorno: Pessoa[]) => {
+          this.listaPessoas = retorno;        
+        })
   }
 
   salvar() {

@@ -19,6 +19,16 @@
 
 <ion-item>
     <ion-icon color="primary" name="grid" item-start></ion-icon>
+    <ion-label *ngIf="!eTituloReceber">Fornecedor</ion-label>
+    <ion-label *ngIf="eTituloReceber">Cliente</ion-label>
+    <ion-select [(ngModel)]="dadosDoForm.pessoaId">
+      <ion-option value="" selected>Nenhum</ion-option>
+      <ion-option *ngFor="let item of listaPessoas" value="{{item.id}}">{{ item.nome }}</ion-option>
+    </ion-select>
+  </ion-item>
+  
+<ion-item>
+    <ion-icon color="primary" name="grid" item-start></ion-icon>
     <ion-label>Categoria</ion-label>
     <ion-select [(ngModel)]="dadosDoForm.categoriaId">
       <ion-option value="" selected>Nenhum</ion-option>
@@ -55,7 +65,5 @@
     <ion-label stacked>Data pagamento</ion-label>
     <ion-input type="date" [(ngModel)]="dadosDoForm.dataPagamento"></ion-input>
   </ion-item> 
-
-
-
+  
 </ion-content>
