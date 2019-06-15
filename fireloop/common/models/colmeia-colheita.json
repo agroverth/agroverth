@@ -47,6 +47,9 @@
     },
     "quantidadeMel": {
       "type": "number"
+    },
+    "quantidadeNectar": {
+      "type": "number"
     }
   },
   "validations": [],
@@ -54,6 +57,11 @@
     "colmeia": {
       "type": "belongsTo",
       "model": "colmeia",
+      "foreignKey": ""
+    },
+    "itens": {
+      "type": "hasMany",
+      "model": "colmeiaColheitaItens",
       "foreignKey": ""
     }
   },

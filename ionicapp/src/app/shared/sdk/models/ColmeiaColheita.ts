@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  Colmeia
+  Colmeia,
+  ColmeiaColheitaItens
 } from '../index';
 
 declare var Object: any;
@@ -13,11 +14,13 @@ export interface ColmeiaColheitaInterface {
   "quantidadeCera"?: number;
   "quantidadePolen"?: number;
   "quantidadeMel"?: number;
+  "quantidadeNectar"?: number;
   "id"?: any;
   "colmeiaId"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
   colmeia?: Colmeia;
+  itens?: ColmeiaColheitaItens[];
 }
 
 export class ColmeiaColheita implements ColmeiaColheitaInterface {
@@ -29,11 +32,13 @@ export class ColmeiaColheita implements ColmeiaColheitaInterface {
   "quantidadeCera": number;
   "quantidadePolen": number;
   "quantidadeMel": number;
+  "quantidadeNectar": number;
   "id": any;
   "colmeiaId": any;
   "createdAt": Date;
   "updatedAt": Date;
   colmeia: Colmeia;
+  itens: ColmeiaColheitaItens[];
   constructor(data?: ColmeiaColheitaInterface) {
     Object.assign(this, data);
   }
@@ -99,6 +104,10 @@ export class ColmeiaColheita implements ColmeiaColheitaInterface {
           name: 'quantidadeMel',
           type: 'number'
         },
+        "quantidadeNectar": {
+          name: 'quantidadeNectar',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'any'
@@ -124,6 +133,14 @@ export class ColmeiaColheita implements ColmeiaColheitaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'colmeiaId',
           keyTo: 'id'
+        },
+        itens: {
+          name: 'itens',
+          type: 'ColmeiaColheitaItens[]',
+          model: 'ColmeiaColheitaItens',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'colmeiaColheitaId'
         },
       }
     }

@@ -10,9 +10,11 @@ export interface ColmeiaColheitaItensInterface {
   "quantidadeCera"?: number;
   "quantidadePolen"?: number;
   "quantidadeMel"?: number;
+  "quantidadeNectar"?: number;
   "id"?: any;
   "colheitaId"?: any;
   "colmeiaId"?: any;
+  "colmeiaColheitaId"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
   colheita?: ColmeiaColheita;
@@ -24,9 +26,11 @@ export class ColmeiaColheitaItens implements ColmeiaColheitaItensInterface {
   "quantidadeCera": number;
   "quantidadePolen": number;
   "quantidadeMel": number;
+  "quantidadeNectar": number;
   "id": any;
   "colheitaId": any;
   "colmeiaId": any;
+  "colmeiaColheitaId": any;
   "createdAt": Date;
   "updatedAt": Date;
   colheita: ColmeiaColheita;
@@ -80,6 +84,10 @@ export class ColmeiaColheitaItens implements ColmeiaColheitaItensInterface {
           name: 'quantidadeMel',
           type: 'number'
         },
+        "quantidadeNectar": {
+          name: 'quantidadeNectar',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'any'
@@ -90,6 +98,10 @@ export class ColmeiaColheitaItens implements ColmeiaColheitaItensInterface {
         },
         "colmeiaId": {
           name: 'colmeiaId',
+          type: 'any'
+        },
+        "colmeiaColheitaId": {
+          name: 'colmeiaColheitaId',
           type: 'any'
         },
         "createdAt": {

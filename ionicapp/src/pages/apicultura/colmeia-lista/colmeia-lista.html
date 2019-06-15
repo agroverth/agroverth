@@ -33,9 +33,8 @@
       <br>
       Ninhos: {{ item.quantidadeNinho }} | Melgueiras: {{ item.quantidadeMelgueira }}
 
-      <a href="javascript:;" item-end (click)="$event.stopPropagation()">
-        <ion-icon name="clipboard"  color="primary" (click)="revisao(item)"></ion-icon>
-
+      <a href="javascript:;" item-end (click)="$event.stopPropagation()" *ngIf="!selecao">
+        <ion-icon name="clipboard" color="primary" (click)="revisao(item)"></ion-icon>
       </a>
 
 

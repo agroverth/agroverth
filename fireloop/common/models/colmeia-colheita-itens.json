@@ -35,6 +35,9 @@
     },
     "quantidadeMel": {
       "type": "number"
+    },
+    "quantidadeNectar": {
+      "type": "number"
     }
   },
   "validations": [],
