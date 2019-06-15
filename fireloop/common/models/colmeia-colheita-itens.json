@@ -43,6 +43,11 @@
       "type": "belongsTo",
       "model": "colmeiaColheita",
       "foreignKey": ""
+    },
+    "colmeia": {
+      "type": "belongsTo",
+      "model": "colmeia",
+      "foreignKey": ""
     }
   },
   "acls": [],

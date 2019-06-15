@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  ColmeiaColheita
+  ColmeiaColheita,
+  Colmeia
 } from '../index';
 
 declare var Object: any;
@@ -11,9 +12,11 @@ export interface ColmeiaColheitaItensInterface {
   "quantidadeMel"?: number;
   "id"?: any;
   "colheitaId"?: any;
+  "colmeiaId"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
   colheita?: ColmeiaColheita;
+  colmeia?: Colmeia;
 }
 
 export class ColmeiaColheitaItens implements ColmeiaColheitaItensInterface {
@@ -23,9 +26,11 @@ export class ColmeiaColheitaItens implements ColmeiaColheitaItensInterface {
   "quantidadeMel": number;
   "id": any;
   "colheitaId": any;
+  "colmeiaId": any;
   "createdAt": Date;
   "updatedAt": Date;
   colheita: ColmeiaColheita;
+  colmeia: Colmeia;
   constructor(data?: ColmeiaColheitaItensInterface) {
     Object.assign(this, data);
   }
@@ -83,6 +88,10 @@ export class ColmeiaColheitaItens implements ColmeiaColheitaItensInterface {
           name: 'colheitaId',
           type: 'any'
         },
+        "colmeiaId": {
+          name: 'colmeiaId',
+          type: 'any'
+        },
         "createdAt": {
           name: 'createdAt',
           type: 'Date'
@@ -99,6 +108,14 @@ export class ColmeiaColheitaItens implements ColmeiaColheitaItensInterface {
           model: 'ColmeiaColheita',
           relationType: 'belongsTo',
                   keyFrom: 'colheitaId',
+          keyTo: 'id'
+        },
+        colmeia: {
+          name: 'colmeia',
+          type: 'Colmeia',
+          model: 'Colmeia',
+          relationType: 'belongsTo',
+                  keyFrom: 'colmeiaId',
           keyTo: 'id'
         },
       }

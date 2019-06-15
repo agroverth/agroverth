@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ColmeiaColheita, ColmeiaColheitaApi } from '../../../app/shared/sdk';
 
 /**
  * Generated class for the ColmeiaColheitaListaPage page.
@@ -15,11 +16,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ColmeiaColheitaListaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public buscando: boolean = false;
+  public termoBuscado: string = '';
+  public lista: ColmeiaColheita[];
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public API: ColmeiaColheitaApi) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ColmeiaColheitaListaPage');
+    // this.buscar();
   }
+
+  ionViewDidEnter() {
+    this.buscar();
+  }
+
+  buscar() {
+
+    this.API.find({
+      // where: {
+      //   descricao: { like: this.termoBuscado, options: 'i' }
+      // }
+    }).subscribe(
+      (data: ColmeiaColheita[]) => {
+        this.lista = data;
+
+      }
+    )
+  }
+
+  abrir(item: ColmeiaColheita = null) {
+    if (item)
+      this.navCtrl.push('ColmeiaColheitaFormPage', { item: item });
+    else
+      this.navCtrl.push('ColmeiaColheitaFormPage');
+  }
+
 
 }
