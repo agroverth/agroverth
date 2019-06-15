@@ -27,11 +27,11 @@ export class ColmeiaRevisaoListaPage {
       this.colmeia = Object.assign(new Colmeia, item);
       this.API.find({
         where: {
-          colmeiaId: this.colmeia.id
+          //colmeiaId: this.colmeia.id
         },
         include: { 'colmeia': 'apiario' }
-      }).subscribe(lista => {
-        this.lista = lista;
+      }).subscribe((lista: ColmeiaRevisao[]) => {
+        this.lista = lista.filter(x => x.colmeiaId == this.colmeia.id);
       });
     }
   }

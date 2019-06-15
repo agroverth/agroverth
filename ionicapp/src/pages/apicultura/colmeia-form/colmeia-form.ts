@@ -34,6 +34,15 @@ export class ColmeiaFormPage {
     else {
     }
 
+    this.dadosDoForm.quantidadeOvo = this.dadosDoForm.quantidadeOvo | 0;
+    this.dadosDoForm.quantidadeLarva = this.dadosDoForm.quantidadeLarva | 0;
+    this.dadosDoForm.quantidadePupa = this.dadosDoForm.quantidadePupa | 0;
+    this.dadosDoForm.quantidadePupaZangao = this.dadosDoForm.quantidadePupaZangao | 0;
+    this.dadosDoForm.quantidadePolen = this.dadosDoForm.quantidadePolen | 0;
+    this.dadosDoForm.quantidadeNectar = this.dadosDoForm.quantidadeNectar | 0;
+    this.dadosDoForm.quantidadeMel = this.dadosDoForm.quantidadeMel | 0;
+
+
 
   }
 

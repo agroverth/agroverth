@@ -59,19 +59,17 @@
 
   <ion-item-group>
     <ion-item-divider color="light">Postura</ion-item-divider>
-    <ion-item>Ovos <p item-end>3</p></ion-item>
-    <ion-item>Larvas <p item-end>3</p></ion-item>
-    <ion-item>Pupas <p item-end>3</p></ion-item>
-    <ion-item>Pupas de zangão <p item-end>3</p></ion-item>
+    <ion-item>Ovos <p item-end>{{dadosDoForm?.quantidadeOvo}}</p></ion-item>
+    <ion-item>Larvas <p item-end>{{dadosDoForm?.quantidadeLarva}}</p></ion-item>
+    <ion-item>Pupas <p item-end>{{dadosDoForm?.quantidadePupa}}</p></ion-item>
+    <ion-item>Pupas de zangão <p item-end>{{dadosDoForm?.quantidadePupaZangao}}</p></ion-item>
   </ion-item-group>
 
   <ion-item-group>
     <ion-item-divider color="light">Alimento</ion-item-divider>
-    <ion-item>Mel <p item-end>3</p></ion-item>
-    <ion-item>Nectar <p item-end>3</p></ion-item>
-    <ion-item>Polén <p item-end>3</p></ion-item>
+    <ion-item>Mel <p item-end>{{dadosDoForm?.quantidadeMel}}</p></ion-item>
+    <ion-item>Nectar <p item-end>{{dadosDoForm?.quantidadeNectar}}</p></ion-item>
+    <ion-item>Polén <p item-end>{{dadosDoForm?.quantidadePolen}}</p></ion-item>
   </ion-item-group>
-
-
 
 </ion-content>
