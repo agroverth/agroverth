@@ -2,6 +2,12 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../models/User';
 import { Apiario } from '../../models/Apiario';
+import { Colmeia } from '../../models/Colmeia';
+import { ColmeiaRevisao } from '../../models/ColmeiaRevisao';
+import { ColmeiaColheita } from '../../models/ColmeiaColheita';
+import { Pessoa } from '../../models/Pessoa';
+import { FinanceirioCategoria } from '../../models/FinanceirioCategoria';
+import { Financeirio } from '../../models/Financeirio';
 
 export interface Models { [name: string]: any }
 
@@ -11,6 +17,12 @@ export class SDKModels {
   private models: Models = {
     User: User,
     Apiario: Apiario,
+    Colmeia: Colmeia,
+    ColmeiaRevisao: ColmeiaRevisao,
+    ColmeiaColheita: ColmeiaColheita,
+    Pessoa: Pessoa,
+    FinanceirioCategoria: FinanceirioCategoria,
+    Financeirio: Financeirio,
     
   };
 

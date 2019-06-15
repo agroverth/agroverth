@@ -50,6 +50,12 @@ import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
 import { ApiarioApi } from './services/custom/Apiario';
+import { ColmeiaApi } from './services/custom/Colmeia';
+import { ColmeiaRevisaoApi } from './services/custom/ColmeiaRevisao';
+import { ColmeiaColheitaApi } from './services/custom/ColmeiaColheita';
+import { PessoaApi } from './services/custom/Pessoa';
+import { FinanceirioCategoriaApi } from './services/custom/FinanceirioCategoria';
+import { FinanceirioApi } from './services/custom/Financeirio';
 /**
 * @module SDKBrowserModule
 * @description
@@ -82,6 +88,12 @@ export class SDKBrowserModule {
         RealTime,
         UserApi,
         ApiarioApi,
+        ColmeiaApi,
+        ColmeiaRevisaoApi,
+        ColmeiaColheitaApi,
+        PessoaApi,
+        FinanceirioCategoriaApi,
+        FinanceirioApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

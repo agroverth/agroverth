@@ -1,5 +1,5 @@
 {
-  "name": "apiario",
+  "name": "colmeia",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for apiario registers.",
+        "description": "Statistical information for colmeia registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -24,24 +24,27 @@
     ]
   },
   "properties": {
+    "numero": {
+      "type": "string"
+    },
     "nome": {
       "type": "string"
     },
-    "localizacao": {
-      "type": "string"
+    "quantidadeNinho": {
+      "type": "number"
     },
-    "especie": {
-      "type": "string"
-    },
-    "ativo": {
-      "type": "boolean"
-    },
-    "dataCriacao": {
-      "type": "date"
+    "quantidadeMelgueira": {
+      "type": "number"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "apiario": {
+      "type": "belongsTo",
+      "model": "apiario",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

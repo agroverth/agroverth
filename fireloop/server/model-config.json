@@ -38,5 +38,29 @@
   "apiario": {
     "dataSource": "db",
     "public": true
+  },
+  "colmeia": {
+    "dataSource": "db",
+    "public": true
+  },
+  "colmeiaRevisao": {
+    "dataSource": "db",
+    "public": true
+  },
+  "colmeiaColheita": {
+    "dataSource": "db",
+    "public": true
+  },
+  "pessoa": {
+    "dataSource": "db",
+    "public": true
+  },
+  "financeirioCategoria": {
+    "dataSource": "db",
+    "public": true
+  },
+  "financeirio": {
+    "dataSource": "db",
+    "public": true
   }
 }

@@ -1,0 +1,86 @@
+{
+  "name": "colmeiaRevisao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "FireLoop": true,
+    "TimeStamp": {
+      "required": false
+    },
+    "Stats": [
+      {
+        "method": "stats",
+        "endpoint": "/stats",
+        "description": "Statistical information for colmeiaRevisao registers.",
+        "type": "model",
+        "count": {
+          "on": "createdAt",
+          "by": "index"
+        }
+      }
+    ]
+  },
+  "properties": {
+    "data": {
+      "type": "date"
+    },
+    "temperaturaInterna": {
+      "type": "number"
+    },
+    "temperaturaExterna": {
+      "type": "number"
+    },
+    "humidadeInterna": {
+      "type": "number"
+    },
+    "humidadeExterna": {
+      "type": "number"
+    },
+    "predadores": {
+      "type": "boolean"
+    },
+    "predadoresDescricao": {
+      "type": "string"
+    },
+    "ocorrencias": {
+      "type": "boolean"
+    },
+    "ocorrenciasDescricao": {
+      "type": "string"
+    },
+    "quantidadeNinho": {
+      "type": "number"
+    },
+    "quantidadeMelgueira": {
+      "type": "number"
+    },
+    "quantiadeTampasTrocadas": {
+      "type": "number"
+    },
+    "quantiadeQuadrosTrocados": {
+      "type": "number"
+    },
+    "quantiadeTelaNinhoTrocadas": {
+      "type": "number"
+    },
+    "quantiadeTelaMelgueiraTrocadas": {
+      "type": "number"
+    },
+    "quantiadeQuadroPropolisTrocados": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "colmeia": {
+      "type": "belongsTo",
+      "model": "colmeia",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
