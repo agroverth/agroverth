@@ -29,7 +29,7 @@ export class MyApp {
       // { title: 'Apicultura', component: null },
       { title: 'Apiario', component: 'ApiarioListaPage' },
       { title: 'Caixa', component: 'ColmeiaListaPage' },
-      { title: 'Revisão', component: 'ColmeiaRevisaoListaPage' },
+      // { title: 'Revisão', component: 'ColmeiaRevisaoListaPage' },
       { title: 'Colheita', component: 'ColmeiaColheitaListaPage' },
       // { title: 'Financeiro', component: null },
       { title: 'Financeiro', component: 'FinanceiroListaPage' },
