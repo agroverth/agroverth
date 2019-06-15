@@ -1,6 +1,6 @@
 {
   "dbMemory": {
-    "name": "db",
+    "name": "dbMemory",
     "connector": "memory"
   },
   "db": {
@@ -9,7 +9,7 @@
     "url": "mongodb://hackathon2019:hrljpVTDO20uR5zg@cluster0-shard-00-00-riygh.mongodb.net:27017,cluster0-shard-00-01-riygh.mongodb.net:27017,cluster0-shard-00-02-riygh.mongodb.net:27017/agroverth?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",
     "database": "",
     "password": "",
-    "name": "dbMongo",
+    "name": "db",
     "user": "",
     "useNewUrlParser": true,
     "connector": "mongodb"
