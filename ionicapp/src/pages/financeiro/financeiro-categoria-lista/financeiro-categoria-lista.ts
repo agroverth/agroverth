@@ -29,12 +29,11 @@ export class FinanceiroCategoriaListaPage {
 
     this.API.find({
       where: {
-        descricao: { like: this.termoBuscado, options: 'i' }
+        nome: { like: this.termoBuscado, options: 'i' }
       }
     }).subscribe(
       (data: FinanceiroCategoria[]) => {
         this.lista = data;
-
       }
     )
   }

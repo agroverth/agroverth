@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the FinanceiroCategoriaFormPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FinanceiroCategoria } from '../../../app/shared/sdk/models';
+import { FinanceiroCategoriaApi } from '../../../app/shared/sdk';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FinanceiroCategoriaFormPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public dadosDoForm: FinanceiroCategoria = new FinanceiroCategoria();
+
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+     public API: FinanceiroCategoriaApi) {
+    let item = navParams.get('item');
+    if (item) this.dadosDoForm = Object.assign(new FinanceiroCategoria, item);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FinanceiroCategoriaFormPage');
+
   }
 
+  salvar() {
+
+    try {
+      if (!this.dadosDoForm.nome) throw 'Informe uma descrição';
+
+      this.API.upsert(this.dadosDoForm).subscribe(
+        (retorno: FinanceiroCategoria) => {
+          this.navCtrl.pop();
+        }
+      )
+
+    } catch (error) {
+      alert(error);
+    }
+  }
+
+  excluir() {
+  }
 }
