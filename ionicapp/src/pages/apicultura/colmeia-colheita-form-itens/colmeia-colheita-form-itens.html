@@ -1,0 +1,124 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title>Colheita - Caixa</ion-title>
+  
+      <ion-buttons end>
+        <button ion-button icon-only (click)="salvar()" *ngIf="!dadosDoForm.id">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+        <!-- <button ion-button icon-only (click)="excluir()" *ngIf="dadosDoForm.id">
+          <ion-icon name="trash"></ion-icon>
+        </button> -->
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label stacked>Caixa</ion-label>
+      <ion-input type="text" readonly="readonly" [value]="colmeia?.apiario?.nome  +'-'+  colmeia?.nome"></ion-input>
+      <br>
+    </ion-item>
+    <ion-item-divider>
+      <b>Melgueiras:</b> {{colmeia?.quantidadeMelgueira}} | <b>Ninhos:</b> {{ colmeia?.quantidadeNinho}}
+    </ion-item-divider>
+  
+  
+  
+  
+    <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label>Pólen</ion-label>
+      <div item-end>
+        <div class="quantidades">
+          <div>
+            <div class="buttons">
+              <button ion-button icon-only (click)="addUm('quantidadePolen')" class="btnMais">
+                <ion-icon name="add"></ion-icon>
+              </button>
+              <button ion-button icon-only (click)="subUm('quantidadePolen')" class="btnMenos">
+                <ion-icon name="remove"></ion-icon>
+              </button>
+            </div>
+            <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePolen" (input)="calcularTotais()"
+              (blur)="calcularTotais()">
+          </div>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label>Néctar</ion-label>
+      <div item-end>
+        <div class="quantidades">
+          <div>
+            <div class="buttons">
+              <button ion-button icon-only (click)="addUm('quantidadeNectar')" class="btnMais">
+                <ion-icon name="add"></ion-icon>
+              </button>
+              <button ion-button icon-only (click)="subUm('quantidadeNectar')" class="btnMenos">
+                <ion-icon name="remove"></ion-icon>
+              </button>
+            </div>
+            <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeNectar" (input)="calcularTotais()"
+              (blur)="calcularTotais()">
+          </div>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label>Mel</ion-label>
+      <div item-end>
+        <div class="quantidades">
+          <div>
+            <div class="buttons">
+              <button ion-button icon-only (click)="addUm('quantidadeMel')" class="btnMais">
+                <ion-icon name="add"></ion-icon>
+              </button>
+              <button ion-button icon-only (click)="subUm('quantidadeMel')" class="btnMenos">
+                <ion-icon name="remove"></ion-icon>
+              </button>
+            </div>
+            <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeMel" (input)="calcularTotais()"
+              (blur)="calcularTotais()">
+          </div>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label>Própolis</ion-label>
+      <div item-end>
+        <div class="quantidades">
+          <div>
+            <div class="buttons">
+              <button ion-button icon-only (click)="addUm('quantidadePropolis')" class="btnMais">
+                <ion-icon name="add"></ion-icon>
+              </button>
+              <button ion-button icon-only (click)="subUm('quantidadePropolis')" class="btnMenos">
+                <ion-icon name="remove"></ion-icon>
+              </button>
+            </div>
+            <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePropolis" (input)="calcularTotais()"
+              (blur)="calcularTotais()">
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Possui Ocorrências?</ion-label>
+      <ion-toggle checked="false" [(ngModel)]="dadosDoForm.temOcorrencia"></ion-toggle>
+    </ion-item>
+  
+    <ion-item *ngIf="dadosDoForm.temOcorrencia">
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label stacked>Detalhes da Ocorrência</ion-label>
+      <ion-textarea [(ngModel)]="dadosDoForm.ocorrencia"></ion-textarea>
+    </ion-item>
+  
+  </ion-content>

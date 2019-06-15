@@ -54,7 +54,7 @@
   "pessoa": {
     "dataSource": "db",
     "public": true
-  },  
+  },
   "colmeriaAnaliseFavo": {
     "dataSource": "db",
     "public": true
@@ -64,6 +64,10 @@
     "public": true
   },
   "financeiroCategoria": {
+    "dataSource": "db",
+    "public": true
+  },
+  "colmeiaColheitaItens": {
     "dataSource": "db",
     "public": true
   }

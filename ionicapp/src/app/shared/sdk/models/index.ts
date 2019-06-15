@@ -8,5 +8,6 @@ export * from './Pessoa';
 export * from './ColmeriaAnaliseFavo';
 export * from './Financeiro';
 export * from './FinanceiroCategoria';
+export * from './ColmeiaColheitaItens';
 export * from './BaseModels';
 export * from './FireLoopRef';

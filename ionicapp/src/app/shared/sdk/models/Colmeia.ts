@@ -7,8 +7,16 @@ declare var Object: any;
 export interface ColmeiaInterface {
   "numero"?: string;
   "nome"?: string;
+  "temPropolis"?: boolean;
   "quantidadeNinho"?: number;
   "quantidadeMelgueira"?: number;
+  "quantidadeOvo"?: number;
+  "quantidadeLarva"?: number;
+  "quantidadePupa"?: number;
+  "quantidadePupaZangao"?: number;
+  "quantidadePolen"?: number;
+  "quantidadeNectar"?: number;
+  "quantidadeMel"?: number;
   "id"?: any;
   "apiarioId"?: any;
   "createdAt"?: Date;
@@ -19,8 +27,16 @@ export interface ColmeiaInterface {
 export class Colmeia implements ColmeiaInterface {
   "numero": string;
   "nome": string;
+  "temPropolis": boolean;
   "quantidadeNinho": number;
   "quantidadeMelgueira": number;
+  "quantidadeOvo": number;
+  "quantidadeLarva": number;
+  "quantidadePupa": number;
+  "quantidadePupaZangao": number;
+  "quantidadePolen": number;
+  "quantidadeNectar": number;
+  "quantidadeMel": number;
   "id": any;
   "apiarioId": any;
   "createdAt": Date;
@@ -67,12 +83,44 @@ export class Colmeia implements ColmeiaInterface {
           name: 'nome',
           type: 'string'
         },
+        "temPropolis": {
+          name: 'temPropolis',
+          type: 'boolean'
+        },
         "quantidadeNinho": {
           name: 'quantidadeNinho',
           type: 'number'
         },
         "quantidadeMelgueira": {
           name: 'quantidadeMelgueira',
+          type: 'number'
+        },
+        "quantidadeOvo": {
+          name: 'quantidadeOvo',
+          type: 'number'
+        },
+        "quantidadeLarva": {
+          name: 'quantidadeLarva',
+          type: 'number'
+        },
+        "quantidadePupa": {
+          name: 'quantidadePupa',
+          type: 'number'
+        },
+        "quantidadePupaZangao": {
+          name: 'quantidadePupaZangao',
+          type: 'number'
+        },
+        "quantidadePolen": {
+          name: 'quantidadePolen',
+          type: 'number'
+        },
+        "quantidadeNectar": {
+          name: 'quantidadeNectar',
+          type: 'number'
+        },
+        "quantidadeMel": {
+          name: 'quantidadeMel',
           type: 'number'
         },
         "id": {

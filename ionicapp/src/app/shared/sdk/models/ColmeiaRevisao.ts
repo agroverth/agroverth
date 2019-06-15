@@ -21,6 +21,15 @@ export interface ColmeiaRevisaoInterface {
   "quantiadeTelaNinhoTrocadas"?: number;
   "quantiadeTelaMelgueiraTrocadas"?: number;
   "quantiadeQuadroPropolisTrocados"?: number;
+  "quantidadeOvo"?: number;
+  "quantidadeLarva"?: number;
+  "quantidadePupa"?: number;
+  "quantidadePupaZangao"?: number;
+  "quantidadePolen"?: number;
+  "quantidadeNectar"?: number;
+  "quantidadeMel"?: number;
+  "temOcorrencia"?: string;
+  "ocorrencia"?: string;
   "id"?: any;
   "colmeiaId"?: any;
   "createdAt"?: Date;
@@ -45,6 +54,15 @@ export class ColmeiaRevisao implements ColmeiaRevisaoInterface {
   "quantiadeTelaNinhoTrocadas": number;
   "quantiadeTelaMelgueiraTrocadas": number;
   "quantiadeQuadroPropolisTrocados": number;
+  "quantidadeOvo": number;
+  "quantidadeLarva": number;
+  "quantidadePupa": number;
+  "quantidadePupaZangao": number;
+  "quantidadePolen": number;
+  "quantidadeNectar": number;
+  "quantidadeMel": number;
+  "temOcorrencia": string;
+  "ocorrencia": string;
   "id": any;
   "colmeiaId": any;
   "createdAt": Date;
@@ -146,6 +164,42 @@ export class ColmeiaRevisao implements ColmeiaRevisaoInterface {
         "quantiadeQuadroPropolisTrocados": {
           name: 'quantiadeQuadroPropolisTrocados',
           type: 'number'
+        },
+        "quantidadeOvo": {
+          name: 'quantidadeOvo',
+          type: 'number'
+        },
+        "quantidadeLarva": {
+          name: 'quantidadeLarva',
+          type: 'number'
+        },
+        "quantidadePupa": {
+          name: 'quantidadePupa',
+          type: 'number'
+        },
+        "quantidadePupaZangao": {
+          name: 'quantidadePupaZangao',
+          type: 'number'
+        },
+        "quantidadePolen": {
+          name: 'quantidadePolen',
+          type: 'number'
+        },
+        "quantidadeNectar": {
+          name: 'quantidadeNectar',
+          type: 'number'
+        },
+        "quantidadeMel": {
+          name: 'quantidadeMel',
+          type: 'number'
+        },
+        "temOcorrencia": {
+          name: 'temOcorrencia',
+          type: 'string'
+        },
+        "ocorrencia": {
+          name: 'ocorrencia',
+          type: 'string'
         },
         "id": {
           name: 'id',

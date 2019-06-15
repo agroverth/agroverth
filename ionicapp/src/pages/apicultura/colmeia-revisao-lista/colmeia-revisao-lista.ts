@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Colmeia, ColmeiaRevisao, ColmeiaRevisaoApi } from '../../../app/shared/sdk';
+// import bson from 'bson';
 
 /**
  * Generated class for the ColmeiaRevisaoListaPage page.
@@ -15,11 +17,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ColmeiaRevisaoListaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public colmeia: Colmeia = new Colmeia();
+  public lista: any[] = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public API: ColmeiaRevisaoApi) {
+
+    let item = navParams.get('item');
+    if (item) {
+      this.colmeia = Object.assign(new Colmeia, item);
+      this.API.find({
+        where: {
+          //colmeiaId: this.colmeia.id
+        },
+        include: { 'colmeia': 'apiario' }
+      }).subscribe((lista: ColmeiaRevisao[]) => {
+        this.lista = lista.filter(x => x.colmeiaId == this.colmeia.id);
+      });
+    }
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ColmeiaRevisaoListaPage');
+  abrir(item: ColmeiaRevisao = null) {
+    if (item)
+      this.navCtrl.push('ColmeiaRevisaoFormPage', { item: item, colmeia: this.colmeia });
+    else
+      this.navCtrl.push('ColmeiaRevisaoFormPage', { colmeia: this.colmeia });
   }
+
+
 
 }

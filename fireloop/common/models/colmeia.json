@@ -30,10 +30,34 @@
     "nome": {
       "type": "string"
     },
+    "temPropolis": {
+      "type": "boolean"
+    },
     "quantidadeNinho": {
       "type": "number"
     },
     "quantidadeMelgueira": {
+      "type": "number"
+    },
+    "quantidadeOvo": {
+      "type": "number"
+    },
+    "quantidadeLarva": {
+      "type": "number"
+    },
+    "quantidadePupa": {
+      "type": "number"
+    },
+    "quantidadePupaZangao": {
+      "type": "number"
+    },
+    "quantidadePolen": {
+      "type": "number"
+    },
+    "quantidadeNectar": {
+      "type": "number"
+    },
+    "quantidadeMel": {
       "type": "number"
     }
   },

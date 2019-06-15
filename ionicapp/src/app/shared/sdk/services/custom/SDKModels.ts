@@ -9,6 +9,7 @@ import { Pessoa } from '../../models/Pessoa';
 import { ColmeriaAnaliseFavo } from '../../models/ColmeriaAnaliseFavo';
 import { Financeiro } from '../../models/Financeiro';
 import { FinanceiroCategoria } from '../../models/FinanceiroCategoria';
+import { ColmeiaColheitaItens } from '../../models/ColmeiaColheitaItens';
 
 export interface Models { [name: string]: any }
 
@@ -25,6 +26,7 @@ export class SDKModels {
     ColmeriaAnaliseFavo: ColmeriaAnaliseFavo,
     Financeiro: Financeiro,
     FinanceiroCategoria: FinanceiroCategoria,
+    ColmeiaColheitaItens: ColmeiaColheitaItens,
     
   };
 

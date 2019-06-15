@@ -36,7 +36,7 @@ export class ColmeiaListaPage {
       where: {
         nome: { like: this.termoBuscado, options: 'i' }
       },
-      include:'apiario'
+      include: 'apiario'
     }).subscribe(
       (data: Colmeia[]) => {
         this.lista = data;
@@ -49,6 +49,11 @@ export class ColmeiaListaPage {
       this.navCtrl.push('ColmeiaFormPage', { item: item });
     else
       this.navCtrl.push('ColmeiaFormPage');
+  }
+
+  revisao(item: Colmeia = null) {
+    if (item)
+      this.navCtrl.push('ColmeiaRevisaoListaPage', { item: item });
   }
 
 }
