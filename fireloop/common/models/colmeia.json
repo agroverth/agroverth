@@ -30,6 +30,9 @@
     "nome": {
       "type": "string"
     },
+    "temPropolis": {
+      "type": "boolean"
+    },
     "quantidadeNinho": {
       "type": "number"
     },

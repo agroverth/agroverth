@@ -4,12 +4,12 @@
     <ion-title>Revisão</ion-title>
 
     <ion-buttons end>
-      <button ion-button icon-only (click)="salvar()">
+      <button ion-button icon-only (click)="salvar()" *ngIf="!dadosDoForm.id">
         <ion-icon name="checkmark"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="excluir()" *ngIf="dadosDoForm.id">
+      <!-- <button ion-button icon-only (click)="excluir()" *ngIf="dadosDoForm.id">
         <ion-icon name="trash"></ion-icon>
-      </button>
+      </button> -->
     </ion-buttons>
   </ion-navbar>
 

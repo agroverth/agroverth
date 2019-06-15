@@ -57,6 +57,7 @@ import { PessoaApi } from './services/custom/Pessoa';
 import { ColmeriaAnaliseFavoApi } from './services/custom/ColmeriaAnaliseFavo';
 import { FinanceiroApi } from './services/custom/Financeiro';
 import { FinanceiroCategoriaApi } from './services/custom/FinanceiroCategoria';
+import { ColmeiaColheitaItensApi } from './services/custom/ColmeiaColheitaItens';
 /**
 * @module SDKBrowserModule
 * @description
@@ -96,6 +97,7 @@ export class SDKBrowserModule {
         ColmeriaAnaliseFavoApi,
         FinanceiroApi,
         FinanceiroCategoriaApi,
+        ColmeiaColheitaItensApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

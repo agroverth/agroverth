@@ -1,5 +1,5 @@
 {
-  "name": "colmeiaColheita",
+  "name": "colmeiaColheitaItens",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for colmeiaColheita registers.",
+        "description": "Statistical information for colmeiaColheitaItens registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -24,18 +24,6 @@
     ]
   },
   "properties": {
-    "data": {
-      "type": "date"
-    },
-    "observacao": {
-      "type": "string"
-    },
-    "quantidadeNinhos": {
-      "type": "number"
-    },
-    "quantidadeMelgueiras": {
-      "type": "number"
-    },
     "quantidadePropolis": {
       "type": "number"
     },
@@ -51,9 +39,9 @@
   },
   "validations": [],
   "relations": {
-    "colmeia": {
+    "colheita": {
       "type": "belongsTo",
-      "model": "colmeia",
+      "model": "colmeiaColheita",
       "foreignKey": ""
     }
   },

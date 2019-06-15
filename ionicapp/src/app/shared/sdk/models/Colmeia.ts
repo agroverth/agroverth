@@ -7,6 +7,7 @@ declare var Object: any;
 export interface ColmeiaInterface {
   "numero"?: string;
   "nome"?: string;
+  "temPropolis"?: boolean;
   "quantidadeNinho"?: number;
   "quantidadeMelgueira"?: number;
   "quantidadeOvo"?: number;
@@ -26,6 +27,7 @@ export interface ColmeiaInterface {
 export class Colmeia implements ColmeiaInterface {
   "numero": string;
   "nome": string;
+  "temPropolis": boolean;
   "quantidadeNinho": number;
   "quantidadeMelgueira": number;
   "quantidadeOvo": number;
@@ -80,6 +82,10 @@ export class Colmeia implements ColmeiaInterface {
         "nome": {
           name: 'nome',
           type: 'string'
+        },
+        "temPropolis": {
+          name: 'temPropolis',
+          type: 'boolean'
         },
         "quantidadeNinho": {
           name: 'quantidadeNinho',
