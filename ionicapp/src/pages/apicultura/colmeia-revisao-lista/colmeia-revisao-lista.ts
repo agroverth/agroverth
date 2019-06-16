@@ -21,10 +21,18 @@ export class ColmeiaRevisaoListaPage {
   public lista: any[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public API: ColmeiaRevisaoApi) {
-
-    let item = navParams.get('item');
+    let item = this.navParams.get('item');
     if (item) {
       this.colmeia = Object.assign(new Colmeia, item);
+    }
+  }
+
+  ionViewDidEnter() {
+    this.buscar();
+  }
+
+  buscar() {
+    if (this.colmeia) {
       this.API.find({
         where: {
           //colmeiaId: this.colmeia.id

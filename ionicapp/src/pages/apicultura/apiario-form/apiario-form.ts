@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Apiario, ApiarioApi, AbelhaEspecieApi, AbelhaEspecie } from '../../../app/shared/sdk';
+import { Apiario, ApiarioApi, AbelhaEspecieApi, AbelhaEspecie, ApiarioLocalizacao, ApiarioLocalizacaoApi } from '../../../app/shared/sdk';
 import moment from 'moment';
 
 @IonicPage()
@@ -11,18 +11,20 @@ import moment from 'moment';
 export class ApiarioFormPage {
 
   public dadosDoForm: Apiario = new Apiario();
-  listaAbelhaEspecies: AbelhaEspecie[];
+  public listaAbelhaEspecies: AbelhaEspecie[] = [];
+  public listaLocalizacao: ApiarioLocalizacao[] = [];
 
   public data: string = '';
 
 
-  constructor(public navCtrl: NavController, 
-    public navParams: NavParams, 
-    public API: ApiarioApi, 
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public API: ApiarioApi,
+    public apiarioLocalizacaoApi: ApiarioLocalizacaoApi,
     public abelhaEspecieApi: AbelhaEspecieApi) {
 
     let item = navParams.get('item');
-    if (item) {      
+    if (item) {
       this.dadosDoForm = Object.assign(new Apiario, item);
       this.data = moment(this.dadosDoForm.dataCriacao).format('YYYY-MM-DD');
       console.log(this.data);
@@ -38,8 +40,12 @@ export class ApiarioFormPage {
   ionViewDidLoad() {
     this.abelhaEspecieApi.find().subscribe(
       (retorno: AbelhaEspecie[]) => {
-        this.listaAbelhaEspecies = retorno;        
-      })
+        this.listaAbelhaEspecies = retorno;
+      });
+    this.apiarioLocalizacaoApi.find().subscribe(
+      (retorno: ApiarioLocalizacao[]) => {
+        this.listaLocalizacao = retorno;
+      });
 
   }
 

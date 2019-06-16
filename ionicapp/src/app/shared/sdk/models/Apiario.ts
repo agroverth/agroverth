@@ -1,31 +1,34 @@
 /* tslint:disable */
 import {
-  Colmeia
+  Colmeia,
+  ApiarioLocalizacao
 } from '../index';
 
 declare var Object: any;
 export interface ApiarioInterface {
   "nome"?: string;
-  "localizacao"?: string;
   "especie"?: string;
   "ativo"?: boolean;
   "dataCriacao"?: Date;
   "id"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
+  "localizacaoId"?: any;
   colmeias?: Colmeia[];
+  localizacao?: ApiarioLocalizacao;
 }
 
 export class Apiario implements ApiarioInterface {
   "nome": string;
-  "localizacao": string;
   "especie": string;
   "ativo": boolean;
   "dataCriacao": Date;
   "id": any;
   "createdAt": Date;
   "updatedAt": Date;
+  "localizacaoId": any;
   colmeias: Colmeia[];
+  localizacao: ApiarioLocalizacao;
   constructor(data?: ApiarioInterface) {
     Object.assign(this, data);
   }
@@ -63,10 +66,6 @@ export class Apiario implements ApiarioInterface {
           name: 'nome',
           type: 'string'
         },
-        "localizacao": {
-          name: 'localizacao',
-          type: 'string'
-        },
         "especie": {
           name: 'especie',
           type: 'string'
@@ -91,6 +90,10 @@ export class Apiario implements ApiarioInterface {
           name: 'updatedAt',
           type: 'Date'
         },
+        "localizacaoId": {
+          name: 'localizacaoId',
+          type: 'any'
+        },
       },
       relations: {
         colmeias: {
@@ -100,6 +103,14 @@ export class Apiario implements ApiarioInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'apiarioId'
+        },
+        localizacao: {
+          name: 'localizacao',
+          type: 'ApiarioLocalizacao',
+          model: 'ApiarioLocalizacao',
+          relationType: 'belongsTo',
+                  keyFrom: 'localizacaoId',
+          keyTo: 'id'
         },
       }
     }

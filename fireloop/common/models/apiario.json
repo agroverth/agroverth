@@ -27,12 +27,6 @@
     "nome": {
       "type": "string"
     },
-    "localizacao": {
-      "type": "string"
-    },
-    "especie": {
-      "type": "string"
-    },
     "ativo": {
       "type": "boolean"
     },
@@ -45,6 +39,16 @@
     "colmeias": {
       "type": "hasMany",
       "model": "colmeia",
+      "foreignKey": ""
+    },
+    "localizacao": {
+      "type": "belongsTo",
+      "model": "apiarioLocalizacao",
+      "foreignKey": ""
+    },
+    "especie": {
+      "type": "belongsTo",
+      "model": "abelhaEspecie",
       "foreignKey": ""
     }
   },

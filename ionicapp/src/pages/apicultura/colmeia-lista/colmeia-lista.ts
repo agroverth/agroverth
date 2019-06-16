@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Colmeia, ColmeiaApi, ColmeiaTarefa } from '../../../app/shared/sdk';
+import { firstBy } from "thenby";
 
 @IonicPage()
 @Component({
@@ -32,10 +33,14 @@ export class ColmeiaListaPage {
       where: {
         nome: { like: this.termoBuscado, options: 'i' }
       },
-      include: ['apiario', 'tarefas']
+      include: ['apiario', 'tarefas'],
+      order: ['apiario.nome ASC', 'nome ASC']
     }).subscribe(
       (data: Colmeia[]) => {
-        this.lista = data;
+        this.lista = data.sort(
+          firstBy(function (v) { return v.apiario.nome; })
+            .thenBy("nome")            
+        );
       }
     )
   }
