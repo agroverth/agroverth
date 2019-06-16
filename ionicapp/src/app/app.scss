@@ -21,13 +21,55 @@
 
 .button-list{
     .icon{
-        font-size: 2.5em;
+        font-size: 2.2em;
+    }
+
+    .button{
+        padding: 10px;
     }
 }
 
 .btn-voltar{
     margin: 0 6px !important;
     min-width: 44px;
+}
+
+.box-aviso{
+    @include border-radius(4px);
+    background: $danger;
+    border: 1px solid $danger;
+    margin-bottom: 4px;
+
+    .item-inner{
+        border-bottom: none !important;
+        margin-left: 5px !important;
+    }
+
+    .icon, .label{
+        color: #fff;
+    }
+}
+
+.grid-dash{
+    margin: 0 -5px;
+}
+
+.box-dash{
+    @include border-radius(4px);
+    background: $primary;
+    padding: 15px 0 5px;
+    text-align: center;
+    margin: 5px;
+    font-size: 1.2em;
+    font-weight: 200 !important;
+
+
+    b{
+        font-weight: 900;
+        display: block;
+        font-size: 2em;
+        letter-spacing: -0.1em;
+    }
 }
 
 .destaque{

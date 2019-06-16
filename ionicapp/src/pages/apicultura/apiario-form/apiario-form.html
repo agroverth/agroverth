@@ -20,24 +20,32 @@
     <ion-icon color="primary" name="create" item-start></ion-icon>
     <ion-label stacked>Nome</ion-label>
     <ion-input type="text" [(ngModel)]="dadosDoForm.nome"></ion-input>
-  </ion-item> 
-  <ion-item>
+  </ion-item>
+  <!-- <ion-item>
     <ion-icon color="primary" name="pin" item-start></ion-icon>
     <ion-label stacked>Localização</ion-label>
     <ion-input type="text" [(ngModel)]="dadosDoForm.localizacao"></ion-input>
+  </ion-item> -->
+  <ion-item>
+    <ion-icon color="primary" name="pin" item-start></ion-icon>
+    <ion-label>Localização</ion-label>
+    <ion-select [(ngModel)]="dadosDoForm.localizacaoId">
+      <ion-option value="" selected>Selecione</ion-option>
+      <ion-option *ngFor="let item of listaLocalizacao" value="{{item.id}}">{{ item.nome }}</ion-option>
+    </ion-select>
   </ion-item>
   <ion-item>
-      <ion-icon color="primary" name="grid" item-start></ion-icon>
-      <ion-label>Espécie</ion-label>
-      <ion-select [(ngModel)]="dadosDoForm.abelhaEspeciesId">
-        <ion-option value="" selected>Nenhum</ion-option>
-        <ion-option *ngFor="let item of listaAbelhaEspecies" value="{{item.id}}">{{ item.nome }}</ion-option>
-      </ion-select>
-    </ion-item>
+    <ion-icon color="primary" name="grid" item-start></ion-icon>
+    <ion-label>Espécie</ion-label>
+    <ion-select [(ngModel)]="dadosDoForm.especieId">
+      <ion-option value="" selected>Nenhum</ion-option>
+      <ion-option *ngFor="let item of listaAbelhaEspecies" value="{{item.id}}">{{ item.nome }}</ion-option>
+    </ion-select>
+  </ion-item>
   <ion-item>
     <ion-icon color="primary" name="calendar" item-start></ion-icon>
-    <ion-label stacked>Data</ion-label>
+    <ion-label stacked>Data de criação</ion-label>
     <ion-input type="date" [(ngModel)]="data"></ion-input>
-  </ion-item> 
+  </ion-item>
 
 </ion-content>

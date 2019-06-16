@@ -38,7 +38,7 @@ export class ApiarioListaPage {
       where: {
         nome: { like: this.termoBuscado, options: 'i' }
       },
-      include: { 'colmeias': 'tarefas' }
+      include: [{ 'colmeias': 'tarefas' },'localizacao','especie']
     }).subscribe(
       (data: Apiario[]) => {
         this.lista = data;

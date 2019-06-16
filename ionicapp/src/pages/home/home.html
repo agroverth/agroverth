@@ -1,4 +1,4 @@
-<ion-header >
+<ion-header>
   <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -8,11 +8,62 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>ApiBox</h3>
+
+  <ion-item class="box-aviso">
+    <ion-icon item-start name="warning" color="danger"></ion-icon>
+    Você tem {{ totalTarefasPendentes }} tarefas pendentes!
+  </ion-item>
+
+  <!-- <h3>ApiBox</h3>
 
   <p>
     Seja bem vindo ao <b>ApiBox</b>. 
-  </p>
+  </p> -->
+
+  <div class="grid-dash">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+            <div class="box-dash">
+                <h2><b>{{ totalApiario }}</b> apiários<span *ngIf="totalApiario.length > 1">s</span></h2>
+            </div>
+        </ion-col>
+        <ion-col col-6>
+            <div class="box-dash">
+                <h2><b>{{ totalCaixas }}</b> caixas<span *ngIf="totalCaixas.length > 1">s</span></h2>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <div class="box-dash">
+              <h2><b>{{ totalMelgueira }}</b> melgueiras<span *ngIf="totalMelgueira.length > 1">s</span></h2>
+          </div>
+        </ion-col>
+        <ion-col col-6>
+            <div class="box-dash">
+                <h2><b>{{ totalNinho }}</b> ninhos<span *ngIf="totalNinho.length > 1">s</span></h2>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!-- <p>
+    <b>totalApiario</b>: </p>
+  <p>
+    <b>totalCaixas</b>: {{totalCaixas}}</p>
+  <p>
+    <b>totalMelgueira</b>: {{totalMelgueira}}</p>
+  <p>
+    <b>totalNinho</b>: {{totalNinho}}</p>
+  <p>
+    <b>totalMel</b>: {{totalMel}}</p>
+  <p>
+    <b>totalTarefasPendentes</b>: {{totalTarefasPendentes}}</p> -->
 
   <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
 </ion-content>

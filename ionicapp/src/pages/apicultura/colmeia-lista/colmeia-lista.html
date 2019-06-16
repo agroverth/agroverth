@@ -35,12 +35,14 @@
 
       <ion-badge color="secondary">{{ item.quantidadeNinho / 10 }}</ion-badge> Ninho<span *ngIf="(item.quantidadeNinho / 10 ) > 1">s</span> •
       <ion-badge color="secondary">{{ item.quantidadeMelgueira /10 }}</ion-badge> Melgueira<span *ngIf="(item.quantidadeMelgueira /10) > 1">s</span>
+      <span *ngIf="countPendemtes(item.tarefas)">
+          •  <ion-badge color="danger">{{ countPendemtes(item.tarefas) }}</ion-badge> Tarefa<span *ngIf="(countPendemtes(item.tarefas)) > 1">s</span>
+      </span>
 
       <div class="button-list" item-end *ngIf="!selecao">
         <button color="dark" ion-button icon-only clear (click)="tarefa(item, $event)">
           <ion-icon name="checkbox-outline"></ion-icon>
         </button>
-
         <button color="dark" ion-button icon-only clear (click)="revisao(item, $event)">
           <ion-icon name="eye"></ion-icon>
         </button>
