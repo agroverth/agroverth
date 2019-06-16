@@ -58,6 +58,7 @@ import { ColmeriaAnaliseFavoApi } from './services/custom/ColmeriaAnaliseFavo';
 import { FinanceiroApi } from './services/custom/Financeiro';
 import { FinanceiroCategoriaApi } from './services/custom/FinanceiroCategoria';
 import { ColmeiaColheitaItensApi } from './services/custom/ColmeiaColheitaItens';
+import { ColmeiaTarefaApi } from './services/custom/ColmeiaTarefa';
 /**
 * @module SDKBrowserModule
 * @description
@@ -98,6 +99,7 @@ export class SDKBrowserModule {
         FinanceiroApi,
         FinanceiroCategoriaApi,
         ColmeiaColheitaItensApi,
+        ColmeiaTarefaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

@@ -70,5 +70,9 @@
   "colmeiaColheitaItens": {
     "dataSource": "db",
     "public": true
+  },
+  "colmeiaTarefa": {
+    "dataSource": "db",
+    "public": true
   }
 }
