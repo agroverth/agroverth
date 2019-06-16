@@ -62,4 +62,8 @@ export class ColmeiaListaPage {
     if (item) this.navCtrl.push('ColmeiaTarefaListaPage', { item: item });
   }
 
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
+
 }

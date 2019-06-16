@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Tarefas {{colmeia?.apiario?.nome }} {{colmeia?.nome }}</ion-title>
+    <ion-title>Tarefas <span *ngIf="colmeia">{{colmeia?.apiario?.nome }} {{colmeia?.nome }}</span></ion-title>
 
     <button ion-button icon-only menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -25,7 +25,17 @@
 
   <ion-list>
     <ion-item text-wrap *ngFor="let item of lista" (click)="abrir(item)">
-      {{ item.data | date: 'dd/MM/yyyy'}}
+      <p>{{item?.colmeia?.apiario?.nome }} {{item?.colmeia?.nome }}</p>
+      {{item.quantidade}} - {{ listaTipo.descricao(item.tipo)}}
+      <p *ngIf="item.detalhe">
+        {{item.detalhe}}
+      </p>
+      <br />
+      <small>
+        <b>Criado em </b> {{ item.createdAt | date: 'dd/MM/yyyy'}}
+        <span *ngIf="!item.concluida">• <b>Previsão para </b> {{ item.previsao | date: 'dd/MM/yyyy'}}</span>
+        <span *ngIf="item.concluida">• <b>Concluida em </b> {{ item.dataConclusao | date: 'dd/MM/yyyy'}}</span>
+      </small>
     </ion-item>
   </ion-list>
 

@@ -15,7 +15,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, icon: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -25,6 +25,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
+<<<<<<< HEAD
       { title: 'Home', component: HomePage },
       // { title: 'Apicultura', component: null },
       { title: 'Apiario', component: 'ApiarioListaPage' },
@@ -37,6 +38,18 @@ export class MyApp {
       { title: 'Cliente e fornecedor', component: 'PessoaListaPage' }
       // ,
       // { title: 'AbelhaEspecie (temp)', component: 'AbelhaEspecieListaPage' }
+=======
+      { title: 'Início', icon: 'analytics', component: HomePage },
+      // { title: 'Apicultura', icon: 'ios-archive', component: null },
+      { title: 'Apiario', icon: 'grid', component: 'ApiarioListaPage' },
+      { title: 'Caixa', icon: 'cube', component: 'ColmeiaListaPage' },
+      // { title: 'Revisão', icon: 'ios-archive', component: 'ColmeiaRevisaoListaPage' },
+      { title: 'Colheita', icon: 'md-archive', component: 'ColmeiaColheitaListaPage' },
+      // { title: 'Financeiro', icon: 'ios-archive', component: null },
+      { title: 'Financeiro', icon: 'logo-usd', component: 'FinanceiroListaPage' },
+      { title: 'Categoria', icon: 'pricetags', component: 'FinanceiroCategoriaListaPage' },
+      { title: 'Cliente e fornecedor', icon: 'ios-people', component: 'PessoaListaPage' }
+>>>>>>> dd56be9183e6632c17f87ec3e9150e23af606e65
     ];
 
   }
