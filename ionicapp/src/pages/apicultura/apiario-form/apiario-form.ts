@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Apiario, ApiarioApi } from '../../../app/shared/sdk';
+import { Apiario, ApiarioApi, AbelhaEspecieApi, AbelhaEspecie } from '../../../app/shared/sdk';
 import moment from 'moment';
-
-/**
- * Generated class for the ApiarioFormPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -18,13 +11,18 @@ import moment from 'moment';
 export class ApiarioFormPage {
 
   public dadosDoForm: Apiario = new Apiario();
+  listaAbelhaEspecies: AbelhaEspecie[];
 
   public data: string = '';
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public API: ApiarioApi) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public API: ApiarioApi, 
+    public abelhaEspecieApi: AbelhaEspecieApi) {
+
     let item = navParams.get('item');
-    if (item) {
+    if (item) {      
       this.dadosDoForm = Object.assign(new Apiario, item);
       this.data = moment(this.dadosDoForm.dataCriacao).format('YYYY-MM-DD');
       console.log(this.data);
@@ -38,6 +36,10 @@ export class ApiarioFormPage {
   }
 
   ionViewDidLoad() {
+    this.abelhaEspecieApi.find().subscribe(
+      (retorno: AbelhaEspecie[]) => {
+        this.listaAbelhaEspecies = retorno;        
+      })
 
   }
 
