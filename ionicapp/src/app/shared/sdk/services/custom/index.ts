@@ -9,5 +9,6 @@ export * from './ColmeriaAnaliseFavo';
 export * from './Financeiro';
 export * from './FinanceiroCategoria';
 export * from './ColmeiaColheitaItens';
+export * from './ColmeiaTarefa';
 export * from './SDKModels';
 export * from './logger.service';

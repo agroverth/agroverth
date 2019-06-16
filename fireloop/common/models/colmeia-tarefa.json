@@ -1,0 +1,56 @@
+{
+  "name": "colmeiaTarefa",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "FireLoop": true,
+    "TimeStamp": {
+      "required": false
+    },
+    "Stats": [
+      {
+        "method": "stats",
+        "endpoint": "/stats",
+        "description": "Statistical information for colmeiaTarefa registers.",
+        "type": "model",
+        "count": {
+          "on": "createdAt",
+          "by": "index"
+        }
+      }
+    ]
+  },
+  "properties": {
+    "previsao": {
+      "type": "date"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "quantidade": {
+      "type": "number"
+    },
+    "concluida": {
+      "type": "boolean"
+    },
+    "dataConclusao": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "colmeia": {
+      "type": "belongsTo",
+      "model": "colmeia",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
