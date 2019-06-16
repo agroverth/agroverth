@@ -82,5 +82,9 @@
   "colmeiraTemperatura": {
     "dataSource": "db",
     "public": true
+  },
+  "apiarioLocalizacao": {
+    "dataSource": "db",
+    "public": true
   }
 }

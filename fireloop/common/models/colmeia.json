@@ -70,6 +70,11 @@
       "type": "belongsTo",
       "model": "apiario",
       "foreignKey": ""
+    },
+    "tarefas": {
+      "type": "hasMany",
+      "model": "colmeiaTarefa",
+      "foreignKey": ""
     }
   },
   "acls": [],

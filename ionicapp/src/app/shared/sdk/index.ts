@@ -61,6 +61,7 @@ import { ColmeiaColheitaItensApi } from './services/custom/ColmeiaColheitaItens'
 import { ColmeiaTarefaApi } from './services/custom/ColmeiaTarefa';
 import { AbelhaEspecieApi } from './services/custom/AbelhaEspecie';
 import { ColmeiraTemperaturaApi } from './services/custom/ColmeiraTemperatura';
+import { ApiarioLocalizacaoApi } from './services/custom/ApiarioLocalizacao';
 /**
 * @module SDKBrowserModule
 * @description
@@ -104,6 +105,7 @@ export class SDKBrowserModule {
         ColmeiaTarefaApi,
         AbelhaEspecieApi,
         ColmeiraTemperaturaApi,
+        ApiarioLocalizacaoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

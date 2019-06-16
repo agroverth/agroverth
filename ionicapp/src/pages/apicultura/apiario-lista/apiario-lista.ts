@@ -19,7 +19,7 @@ export class ApiarioListaPage {
 
   public buscando: boolean = false;
   public termoBuscado: string = '';
-  public lista: Apiario[];
+  public lista: Apiario[] | any[] = [];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public API: ApiarioApi) {
@@ -37,10 +37,12 @@ export class ApiarioListaPage {
     this.API.find({
       where: {
         nome: { like: this.termoBuscado, options: 'i' }
-      }
+      },
+      include: { 'colmeias': 'tarefas' }
     }).subscribe(
       (data: Apiario[]) => {
         this.lista = data;
+        this.trataLista();
       }
     )
   }
@@ -50,5 +52,16 @@ export class ApiarioListaPage {
       this.navCtrl.push('ApiarioFormPage', { item: item });
     else
       this.navCtrl.push('ApiarioFormPage');
+  }
+
+  trataLista() {
+    this.lista.forEach(i => {
+      i.totalMelgueira = 0;
+      i.totalMel = 0;
+      i.colmeias.forEach(c => {
+        i.totalMelgueira += c.quantidadeMelgueira;
+        i.totalMel += c.quantidadeMel;
+      });
+    });
   }
 }

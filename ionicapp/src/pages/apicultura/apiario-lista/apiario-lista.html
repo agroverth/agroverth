@@ -15,7 +15,8 @@
   </ion-navbar>
 
   <ion-toolbar color="primary">
-    <ion-searchbar (input)="buscando = true" (ionInput)="buscar()" [(ngModel)]="termoBuscado" debounce="500" placeholder="Pesquisar..."></ion-searchbar>
+    <ion-searchbar (input)="buscando = true" (ionInput)="buscar()" [(ngModel)]="termoBuscado" debounce="500"
+      placeholder="Pesquisar..."></ion-searchbar>
   </ion-toolbar>
 
 </ion-header>
@@ -24,10 +25,13 @@
 
   <ion-list>
     <ion-item text-wrap *ngFor="let item of lista" (click)="abrir(item)">
-      <!-- <ion-avatar item-start>
-        <img src="assets/imgs/img-pasto.jpg">
-      </ion-avatar> -->
-      {{ item.nome}}
+
+      {{ item.nome}}<br />
+      <b>Capacidade das Melgueiras</b> {{ item?.totalMelgueira * 1.2}}
+      <b>Mel pra colheita</b> {{ item?.totalMel * 1.2}}
+      <b>• </b> {{ ((item?.totalMel * 1.2)/(item?.totalMelgueira * 1.2))*100 }} %
+      <br />
+      <b>Caixas</b> {{ item?.colmeias?.length}}
     </ion-item>
   </ion-list>
 

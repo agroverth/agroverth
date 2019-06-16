@@ -1,8 +1,8 @@
 import { Model } from '@mean-expert/model';
 /**
- * @module apiario
+ * @module apiarioLocalizacao
  * @description
- * Write a useful apiario Model description.
+ * Write a useful apiarioLocalizacao Model description.
  * Register hooks and remote methods within the
  * Model Decorator
  **/
@@ -12,24 +12,19 @@ import { Model } from '@mean-expert/model';
   },
   remotes: {
     myRemote: {
-      returns: { arg: 'result', type: 'array' },
-      http: { path: '/my-remote', verb: 'get' }
+      returns : { arg: 'result', type: 'array' },
+      http    : { path: '/my-remote', verb: 'get' }
     }
   }
 })
 
-class apiario {
+class apiarioLocalizacao {
   // LoopBack model instance is injected in constructor
-  constructor(public model: any) {
-    model.observe('access', (ctx: any, next: Function) => {
-      console.log('access', JSON.stringify(ctx.query.where))
-      next();
-    })
-  }
+  constructor(public model: any) {}
 
   // Example Operation Hook
   beforeSave(ctx: any, next: Function): void {
-    console.log('apiario: Before Save');
+    console.log('apiarioLocalizacao: Before Save');
     next();
   }
   // Example Remote Method
@@ -38,4 +33,4 @@ class apiario {
   }
 }
 
-module.exports = apiario;
+module.exports = apiarioLocalizacao;

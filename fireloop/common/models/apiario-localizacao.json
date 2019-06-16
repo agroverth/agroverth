@@ -1,0 +1,44 @@
+{
+  "name": "apiarioLocalizacao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "mesInicioProducao": {
+      "type": "number"
+    },
+    "mesFimProducao": {
+      "type": "number"
+    },
+    "tipoVegetacao": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "FireLoop": true,
+    "TimeStamp": {
+      "required": false
+    },
+    "Stats": [
+      {
+        "method": "stats",
+        "endpoint": "/stats",
+        "description": "Statistical information for apiarioLocalizacao registers.",
+        "type": "model",
+        "count": {
+          "on": "createdAt",
+          "by": "index"
+        }
+      }
+    ]
+  }
+}

@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AbelhaEspecieListaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AbelhaEspecie, AbelhaEspecieApi } from '../../../app/shared/sdk';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AbelhaEspecieListaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public buscando: boolean = false;
+  public termoBuscado: string = '';
+  public lista: AbelhaEspecie[];
+
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+      public API: AbelhaEspecieApi) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AbelhaEspecieListaPage');
   }
 
+  ionViewDidEnter() {
+    this.buscar();
+  }
+
+  buscar() {
+
+    this.API.find({
+      where: {
+        nome: { like: this.termoBuscado, options: 'i' }
+      }
+    }).subscribe(
+      (data: AbelhaEspecie[]) => {
+        this.lista = data;
+      }
+    )
+  }
+
+  abrir(item: AbelhaEspecie = null) {
+    if (item)
+      this.navCtrl.push('AbelhaEspecieFormPage', { item: item });
+    else
+      this.navCtrl.push('AbelhaEspecieFormPage');
+  }
 }

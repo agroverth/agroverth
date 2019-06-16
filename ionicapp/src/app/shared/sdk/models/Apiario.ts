@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  Colmeia
+} from '../index';
 
 declare var Object: any;
 export interface ApiarioInterface {
@@ -10,6 +13,7 @@ export interface ApiarioInterface {
   "id"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
+  colmeias?: Colmeia[];
 }
 
 export class Apiario implements ApiarioInterface {
@@ -21,6 +25,7 @@ export class Apiario implements ApiarioInterface {
   "id": any;
   "createdAt": Date;
   "updatedAt": Date;
+  colmeias: Colmeia[];
   constructor(data?: ApiarioInterface) {
     Object.assign(this, data);
   }
@@ -88,6 +93,14 @@ export class Apiario implements ApiarioInterface {
         },
       },
       relations: {
+        colmeias: {
+          name: 'colmeias',
+          type: 'Colmeia[]',
+          model: 'Colmeia',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'apiarioId'
+        },
       }
     }
   }

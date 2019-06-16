@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  Apiario
+  Apiario,
+  ColmeiaTarefa
 } from '../index';
 
 declare var Object: any;
@@ -23,6 +24,7 @@ export interface ColmeiaInterface {
   "createdAt"?: Date;
   "updatedAt"?: Date;
   apiario?: Apiario;
+  tarefas?: ColmeiaTarefa[];
 }
 
 export class Colmeia implements ColmeiaInterface {
@@ -44,6 +46,7 @@ export class Colmeia implements ColmeiaInterface {
   "createdAt": Date;
   "updatedAt": Date;
   apiario: Apiario;
+  tarefas: ColmeiaTarefa[];
   constructor(data?: ColmeiaInterface) {
     Object.assign(this, data);
   }
@@ -154,6 +157,14 @@ export class Colmeia implements ColmeiaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'apiarioId',
           keyTo: 'id'
+        },
+        tarefas: {
+          name: 'tarefas',
+          type: 'ColmeiaTarefa[]',
+          model: 'ColmeiaTarefa',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'colmeiaId'
         },
       }
     }

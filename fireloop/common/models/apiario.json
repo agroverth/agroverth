@@ -41,7 +41,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "colmeias": {
+      "type": "hasMany",
+      "model": "colmeia",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
