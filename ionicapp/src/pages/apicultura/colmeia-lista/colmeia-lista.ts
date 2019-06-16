@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Colmeia, ColmeiaApi } from '../../../app/shared/sdk';
-
-/**
- * Generated class for the ColmeiaListaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -17,10 +10,13 @@ import { Colmeia, ColmeiaApi } from '../../../app/shared/sdk';
 export class ColmeiaListaPage {
 
   public buscando: boolean = false;
+  public selecao: boolean = false;
   public termoBuscado: string = '';
   public lista: Colmeia[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public API: ColmeiaApi) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public API: ColmeiaApi, public viewCtrl: ViewController) {
+    let selecao = this.navParams.get('selecao');
+    this.selecao = !(!selecao);
   }
 
   ionViewDidLoad() {
@@ -45,15 +41,25 @@ export class ColmeiaListaPage {
   }
 
   abrir(item: Colmeia = null) {
-    if (item)
-      this.navCtrl.push('ColmeiaFormPage', { item: item });
-    else
-      this.navCtrl.push('ColmeiaFormPage');
+    if (this.selecao) {
+      this.viewCtrl.dismiss({ item: item });
+    }
+    else {
+      if (item) {
+        this.navCtrl.push('ColmeiaFormPage', { item: item });
+      }
+      else this.navCtrl.push('ColmeiaFormPage');
+    }
   }
 
-  revisao(item: Colmeia = null) {
-    if (item)
-      this.navCtrl.push('ColmeiaRevisaoListaPage', { item: item });
+  revisao(item: Colmeia = null, ev: any) {
+    ev.stopPropagation();
+    if (item) this.navCtrl.push('ColmeiaRevisaoListaPage', { item: item });
+  }
+
+  tarefa(item: Colmeia = null, ev: any) {
+    ev.stopPropagation();
+    if (item) this.navCtrl.push('ColmeiaTarefaListaPage', { item: item });
   }
 
 }

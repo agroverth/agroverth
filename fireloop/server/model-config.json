@@ -70,5 +70,17 @@
   "colmeiaColheitaItens": {
     "dataSource": "db",
     "public": true
+  },
+  "colmeiaTarefa": {
+    "dataSource": "db",
+    "public": true
+  },
+  "abelhaEspecie": {
+    "dataSource": "db",
+    "public": true
+  },
+  "colmeiraTemperatura": {
+    "dataSource": "db",
+    "public": true
   }
 }

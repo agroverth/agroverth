@@ -1,5 +1,5 @@
 {
-  "name": "colmeiaColheitaItens",
+  "name": "colmeiraTemperatura",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for colmeiaColheitaItens registers.",
+        "description": "Statistical information for colmeiraTemperatura registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -24,29 +24,15 @@
     ]
   },
   "properties": {
-    "quantidadePropolis": {
+    "temperatura": {
       "type": "number"
     },
-    "quantidadeCera": {
-      "type": "number"
-    },
-    "quantidadePolen": {
-      "type": "number"
-    },
-    "quantidadeMel": {
-      "type": "number"
-    },
-    "quantidadeNectar": {
-      "type": "number"
+    "data": {
+      "type": "date"
     }
   },
   "validations": [],
   "relations": {
-    "colheita": {
-      "type": "belongsTo",
-      "model": "colmeiaColheita",
-      "foreignKey": ""
-    },
     "colmeia": {
       "type": "belongsTo",
       "model": "colmeia",

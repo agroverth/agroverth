@@ -17,6 +17,7 @@ export interface ColmeiaInterface {
   "quantidadePolen"?: number;
   "quantidadeNectar"?: number;
   "quantidadeMel"?: number;
+  "quantidadeCera"?: number;
   "id"?: any;
   "apiarioId"?: any;
   "createdAt"?: Date;
@@ -37,6 +38,7 @@ export class Colmeia implements ColmeiaInterface {
   "quantidadePolen": number;
   "quantidadeNectar": number;
   "quantidadeMel": number;
+  "quantidadeCera": number;
   "id": any;
   "apiarioId": any;
   "createdAt": Date;
@@ -121,6 +123,10 @@ export class Colmeia implements ColmeiaInterface {
         },
         "quantidadeMel": {
           name: 'quantidadeMel',
+          type: 'number'
+        },
+        "quantidadeCera": {
+          name: 'quantidadeCera',
           type: 'number'
         },
         "id": {

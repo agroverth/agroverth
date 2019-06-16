@@ -25,18 +25,18 @@ export class ColmeiaRevisaoFormPage {
       this.dadosDoForm = item;
       this.data = moment(this.dadosDoForm.data).format('YYYY-MM-DD');
     } else {
-      this.dadosDoForm.quantidadeOvo = this.colmeia.quantidadeOvo | 0;
-      this.dadosDoForm.quantidadeLarva = this.colmeia.quantidadeLarva | 0;
-      this.dadosDoForm.quantidadePupa = this.colmeia.quantidadePupa | 0;
-      this.dadosDoForm.quantidadePupaZangao = this.colmeia.quantidadePupaZangao | 0;
-      this.dadosDoForm.quantidadePolen = this.colmeia.quantidadePolen | 0;
-      this.dadosDoForm.quantidadeNectar = this.colmeia.quantidadeNectar | 0;
-      this.dadosDoForm.quantidadeMel = this.colmeia.quantidadeMel | 0;
       this.dadosDoForm.data = new Date();
       this.data = moment().format('YYYY-MM-DD');
     }
     let colmeia = navParams.get('colmeia');
     if (colmeia) this.colmeia = colmeia;
+    this.dadosDoForm.quantidadeOvo = this.colmeia.quantidadeOvo | 0;
+    this.dadosDoForm.quantidadeLarva = this.colmeia.quantidadeLarva | 0;
+    this.dadosDoForm.quantidadePupa = this.colmeia.quantidadePupa | 0;
+    this.dadosDoForm.quantidadePupaZangao = this.colmeia.quantidadePupaZangao | 0;
+    this.dadosDoForm.quantidadePolen = this.colmeia.quantidadePolen | 0;
+    this.dadosDoForm.quantidadeNectar = this.colmeia.quantidadeNectar | 0;
+    this.dadosDoForm.quantidadeMel = this.colmeia.quantidadeMel | 0;
   }
 
   addUm(variavel: string) {

@@ -1,0 +1,47 @@
+{
+  "name": "abelhaEspecie",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "FireLoop": true,
+    "TimeStamp": {
+      "required": false
+    },
+    "Stats": [
+      {
+        "method": "stats",
+        "endpoint": "/stats",
+        "description": "Statistical information for abelhaEspecie registers.",
+        "type": "model",
+        "count": {
+          "on": "createdAt",
+          "by": "index"
+        }
+      }
+    ]
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "grauAgressividade": {
+      "type": "number"
+    },
+    "eMellifera": {
+      "type": "boolean"
+    },
+    "origem": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

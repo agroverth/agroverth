@@ -59,6 +59,9 @@
     },
     "quantidadeMel": {
       "type": "number"
+    },
+    "quantidadeCera": {
+      "type": "number"
     }
   },
   "validations": [],

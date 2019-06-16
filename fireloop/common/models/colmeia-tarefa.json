@@ -1,5 +1,5 @@
 {
-  "name": "colmeiaColheita",
+  "name": "colmeiaTarefa",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for colmeiaColheita registers.",
+        "description": "Statistical information for colmeiaTarefa registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -24,32 +24,23 @@
     ]
   },
   "properties": {
-    "data": {
+    "previsao": {
       "type": "date"
     },
-    "observacao": {
+    "tipo": {
       "type": "string"
     },
-    "quantidadeNinhos": {
+    "quantidade": {
       "type": "number"
     },
-    "quantidadeMelgueiras": {
-      "type": "number"
+    "detalhe": {
+      "type": "string"
     },
-    "quantidadePropolis": {
-      "type": "number"
+    "concluida": {
+      "type": "boolean"
     },
-    "quantidadeCera": {
-      "type": "number"
-    },
-    "quantidadePolen": {
-      "type": "number"
-    },
-    "quantidadeMel": {
-      "type": "number"
-    },
-    "quantidadeNectar": {
-      "type": "number"
+    "dataConclusao": {
+      "type": "date"
     }
   },
   "validations": [],
@@ -57,12 +48,10 @@
     "colmeia": {
       "type": "belongsTo",
       "model": "colmeia",
-      "foreignKey": ""
-    },
-    "itens": {
-      "type": "hasMany",
-      "model": "colmeiaColheitaItens",
-      "foreignKey": ""
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [],

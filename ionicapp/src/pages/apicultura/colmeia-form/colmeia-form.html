@@ -18,7 +18,7 @@
 
   <ion-item>
     <ion-icon color="primary" name="grid" item-start></ion-icon>
-    <ion-label>Apiário</ion-label>
+    <ion-label stacked>Apiário</ion-label>
     <ion-select [(ngModel)]="dadosDoForm.apiarioId">
       <ion-option value="" selected>Selecione</ion-option>
       <ion-option *ngFor="let item of listaApiario" value="{{item.id}}">{{ item.nome }}</ion-option>
@@ -32,7 +32,7 @@
   </ion-item> -->
 
   <ion-item>
-    <ion-icon color="primary" name="cube" item-start></ion-icon>
+    <ion-icon color="primary" name="create" item-start></ion-icon>
     <ion-label stacked>Identificação</ion-label>
     <ion-input type="text" [(ngModel)]="dadosDoForm.nome"></ion-input>
   </ion-item>
@@ -41,14 +41,14 @@
     <ion-row>
       <ion-col col-7>
         <ion-item>
-          <ion-icon color="primary" name="cube" item-start></ion-icon>
-          <ion-label stacked>Melgueiras</ion-label>
+          <ion-icon color="primary" name="filing" item-start></ion-icon>
+          <ion-label stacked>Quadro de Melgueiras</ion-label>
           <ion-input type="number" [(ngModel)]="dadosDoForm.quantidadeMelgueira"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col col-5>
         <ion-item>
-          <ion-label stacked>Ninhos</ion-label>
+          <ion-label stacked>Quadro de Ninhos</ion-label>
           <ion-input type="number" [(ngModel)]="dadosDoForm.quantidadeNinho"></ion-input>
         </ion-item>
       </ion-col>
@@ -59,17 +59,17 @@
 
   <ion-item-group>
     <ion-item-divider color="light">Postura</ion-item-divider>
-    <ion-item>Ovos <p item-end>{{dadosDoForm?.quantidadeOvo}}</p></ion-item>
-    <ion-item>Larvas <p item-end>{{dadosDoForm?.quantidadeLarva}}</p></ion-item>
-    <ion-item>Pupas <p item-end>{{dadosDoForm?.quantidadePupa}}</p></ion-item>
-    <ion-item>Pupas de zangão <p item-end>{{dadosDoForm?.quantidadePupaZangao}}</p></ion-item>
+    <ion-item>Ovos <ion-badge item-end>{{dadosDoForm?.quantidadeOvo}}</ion-badge></ion-item>
+    <ion-item>Larvas <ion-badge item-end>{{dadosDoForm?.quantidadeLarva}}</ion-badge></ion-item>
+    <ion-item>Pupas <ion-badge item-end>{{dadosDoForm?.quantidadePupa}}</ion-badge></ion-item>
+    <ion-item>Pupas de zangão <ion-badge item-end>{{dadosDoForm?.quantidadePupaZangao}}</ion-badge></ion-item>
   </ion-item-group>
 
   <ion-item-group>
     <ion-item-divider color="light">Alimento</ion-item-divider>
-    <ion-item>Mel <p item-end>{{dadosDoForm?.quantidadeMel}}</p></ion-item>
-    <ion-item>Nectar <p item-end>{{dadosDoForm?.quantidadeNectar}}</p></ion-item>
-    <ion-item>Polén <p item-end>{{dadosDoForm?.quantidadePolen}}</p></ion-item>
+    <ion-item>Mel <ion-badge item-end>{{dadosDoForm?.quantidadeMel}}</ion-badge></ion-item>
+    <ion-item>Nectar <ion-badge item-end>{{dadosDoForm?.quantidadeNectar}}</ion-badge></ion-item>
+    <ion-item>Polén <ion-badge item-end>{{dadosDoForm?.quantidadePolen}}</ion-badge></ion-item>
   </ion-item-group>
 
 </ion-content>

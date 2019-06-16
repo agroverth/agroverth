@@ -25,8 +25,23 @@
 
   <ion-item>
     <ion-icon color="primary" name="cube" item-start></ion-icon>
-    <ion-label stacked>Descrição</ion-label>
+    <ion-label stacked>Observação</ion-label>
     <ion-input id="descricao" type="text" [(ngModel)]="dadosDoForm.descricao"></ion-input>
   </ion-item>
+
+  <button ion-button color="primary" (click)="addCaixa()">Adicionar Caixa</button>
+
+  <ion-list>
+    <ion-item *ngFor="let item of lista; let i = index;" (click)="editarItem(item)">
+      {{item?.colmeia?.apiario?.nome}} - {{item?.colmeia?.nome}}
+      <br />
+      <b>Mel:</b> {{ item.quantidadeMel }}
+      <span *ngIf="item?.quantidadeNectar">- <b>Néctar:</b> {{ item.quantidadeNectar }}</span>
+      <span *ngIf="item?.quantidadePolen">- <b>Pólen:</b> {{ item.quantidadePolen }}</span>
+      <span *ngIf="item?.quantidadePropolis">- <b>Própolis:</b> {{ item.quantidadePropolis }}</span>
+      <span *ngIf="item?.quantidadeCera">- <b>Cera:</b> {{ item.quantidadeCera }}</span>
+      <ion-icon *ngIf="item.temOcorrencia" color="danger" name="bug"></ion-icon>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

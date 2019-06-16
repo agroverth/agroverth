@@ -25,19 +25,20 @@
 
   <ion-list>
     <ion-item text-wrap *ngFor="let item of lista" (click)="abrir(item)">
-      <!-- <ion-avatar item-start>
-        <img src="assets/imgs/img-pasto.jpg">
-      </ion-avatar> -->
-      <!-- <ion-icon item-start name="funnel" ios="ios-funnel-outline"></ion-icon> -->
-      {{ item?.apiario?.nome}} - {{ item.nome}}
-      <br>
-      Ninhos: {{ item.quantidadeNinho }} | Melgueiras: {{ item.quantidadeMelgueira }}
 
-      <a href="javascript:;" item-end (click)="$event.stopPropagation()">
-        <ion-icon name="clipboard"  color="primary" (click)="revisao(item)"></ion-icon>
+      <h2>{{ item?.apiario?.nome}} {{ item.nome}}</h2>
 
-      </a>
+      <ion-badge color="secondary">{{ item.quantidadeNinho / 10 }}</ion-badge> Ninhos • 
+      <ion-badge color="secondary">{{ item.quantidadeMelgueira /10  }}</ion-badge> Melgueiras
 
+      <button ion-button icon-only clear item-end (click)="tarefa(item, $event)">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </button>
+
+      <button ion-button icon-only clear item-end (click)="revisao(item, $event)">
+        <ion-icon name="clipboard"></ion-icon>
+      </button>
+      
 
     </ion-item>
   </ion-list>
