@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { Colmeia, ColmeiaApi } from '../../../app/shared/sdk';
+import { Colmeia, ColmeiaApi, ColmeiaTarefa } from '../../../app/shared/sdk';
 
 @IonicPage()
 @Component({
@@ -32,12 +32,19 @@ export class ColmeiaListaPage {
       where: {
         nome: { like: this.termoBuscado, options: 'i' }
       },
-      include: 'apiario'
+      include: ['apiario', 'tarefas']
     }).subscribe(
       (data: Colmeia[]) => {
         this.lista = data;
       }
     )
+  }
+
+  countPendemtes(lista: ColmeiaTarefa[]): number {
+    if (lista && lista.length) {
+      return lista.filter(x => !x.concluida).length;
+    }
+    return 0;
   }
 
   abrir(item: Colmeia = null) {
