@@ -31,7 +31,7 @@ export class ColmeiaColheitaListaPage {
   }
 
   ionViewDidLoad() {
-    // this.buscar();
+    //this.buscar();
   }
 
   ionViewDidEnter() {
@@ -39,7 +39,8 @@ export class ColmeiaColheitaListaPage {
   }
 
   buscar() {
-
+    this.lista = [];
+    
     this.API.find({
       where: {
         // descricao: { like: this.termoBuscado, options: 'i' }
@@ -48,8 +49,8 @@ export class ColmeiaColheitaListaPage {
       // include: 'itens'
     }).subscribe(
       (data: ColmeiaColheita[]) => {
-        this.lista = data;
         this.colmeiaColheitaItensApi.find({ include: { 'colmeia': 'apiario' } }).subscribe((itens: any[]) => {
+          this.lista = data;
           this.lista.forEach(item => {
             item.itens = itens.filter(x => x.colheitaId == item.id);
           });

@@ -24,3 +24,50 @@
         font-size: 2.5em;
     }
 }
+
+.btn-voltar{
+    margin: 0 6px !important;
+    min-width: 44px;
+}
+
+.destaque{
+    text-align: center;
+    margin: 0px 0 25px 0;
+    color: #424242;
+
+    h1{
+        margin: 0;
+        font-weight: bold;
+        font-size: 3em;
+    }
+}
+
+.quantidades{
+    position: relative;
+    width: 130px;
+
+    input[type=number]{
+        @include border-radius(300px);
+        border: 1px solid #ccc;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .btnMais, .btnMenos{
+        @include border-radius(100px);
+        width: 40px; height: 40px;
+        padding: 0; top: -4px; 
+    }
+
+    .btnMais{
+        position: absolute;
+        right: -2px;
+    }
+
+    .btnMenos{
+        position: absolute;
+        left: -2px;
+
+    }
+}

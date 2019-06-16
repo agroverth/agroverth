@@ -1,15 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { ColmeiaColheita, ColmeiaColheitaApi, Colmeia, ColmeiaColheitaItensApi, ColmeiaApi } from '../../../app/shared/sdk';
 import moment from 'moment';
 import { ColmeiaColheitaItens } from '../../../app/shared/sdk/models/ColmeiaColheitaItens';
-
-/**
- * Generated class for the ColmeiaColheitaFormPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -27,14 +20,15 @@ export class ColmeiaColheitaFormPage {
     , public modalCtrl: ModalController
     , public API: ColmeiaColheitaApi
     , public colmeiaApi: ColmeiaApi
-    , public colmeiaColheitaItensApi: ColmeiaColheitaItensApi) {
+    , public colmeiaColheitaItensApi: ColmeiaColheitaItensApi
+    , public viewCtrl: ViewController
+  ) {
     let item = navParams.get('item');
     if (item) {
-      this.dadosDoForm = Object.assign(new ColmeiaColheita, item);
-      this.lista = this.dadosDoForm.itens;      
+      this.dadosDoForm = JSON.parse(JSON.stringify(item));
+      this.lista = this.dadosDoForm.itens;
     }
     else this.dadosDoForm.data = new Date();
-
     this.data = moment(this.dadosDoForm.data).format('YYYY-MM-DD');
   }
 
@@ -62,11 +56,13 @@ export class ColmeiaColheitaFormPage {
               if (colmeia.quantidadeCera < 0) colmeia.quantidadeCera = 0;
               if (colmeia.quantidadePolen < 0) colmeia.quantidadePolen = 0;
               if (colmeia.quantidadePropolis < 0) colmeia.quantidadePropolis = 0;
-              this.colmeiaApi.upsert(colmeia).subscribe();
+              this.colmeiaApi.upsert(colmeia).subscribe(() => {
+                this.navCtrl.pop();
+              });
+
             })
           });
 
-          // this.navCtrl.pop();
         }
       )
 

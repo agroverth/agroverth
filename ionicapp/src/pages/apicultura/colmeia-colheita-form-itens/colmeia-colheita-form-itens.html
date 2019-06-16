@@ -1,6 +1,12 @@
 <ion-header>
 
   <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only class="btn-voltar" (click)="viewCtrl.dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
     <ion-title>Colheita - Caixa</ion-title>
 
     <ion-buttons end>
@@ -15,7 +21,7 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-item>
     <ion-icon color="primary" name="cube" item-start></ion-icon>
     <ion-label stacked>Caixa</ion-label>
@@ -23,7 +29,8 @@
     <br>
   </ion-item>
   <ion-item-divider>
-    <b>Melgueiras:</b> {{colmeia?.quantidadeMelgueira}} | <b>Ninhos:</b> {{ colmeia?.quantidadeNinho}}
+    <b>Melgueiras:</b> {{colmeia?.quantidadeMelgueira}} |
+    <b>Ninhos:</b> {{ colmeia?.quantidadeNinho}}
   </ion-item-divider>
 
 
@@ -54,8 +61,7 @@
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePolen" (input)="calcularTotais()"
-            (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePolen" (input)="calcularTotais()" (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -74,8 +80,7 @@
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeNectar" (input)="calcularTotais()"
-            (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeNectar" (input)="calcularTotais()" (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -94,8 +99,7 @@
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeMel" (input)="calcularTotais()"
-            (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeMel" (input)="calcularTotais()" (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -114,8 +118,7 @@
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePropolis" (input)="calcularTotais()"
-            (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadePropolis" (input)="calcularTotais()" (blur)="calcularTotais()">
         </div>
       </div>
     </div>
@@ -134,8 +137,7 @@
               <ion-icon name="remove"></ion-icon>
             </button>
           </div>
-          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeCera" (input)="calcularTotais()"
-            (blur)="calcularTotais()">
+          <input type="number" min="0" [(ngModel)]="dadosDoForm.quantidadeCera" (input)="calcularTotais()" (blur)="calcularTotais()">
         </div>
       </div>
     </div>
