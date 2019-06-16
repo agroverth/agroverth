@@ -28,17 +28,18 @@
 
       <h2>{{ item?.apiario?.nome}} {{ item.nome}}</h2>
 
-      <ion-badge color="secondary">{{ item.quantidadeNinho / 10 }}</ion-badge> Ninhos • 
-      <ion-badge color="secondary">{{ item.quantidadeMelgueira /10  }}</ion-badge> Melgueiras
+      <ion-badge color="secondary">{{ item.quantidadeNinho / 10 }}</ion-badge> Ninho<span *ngIf="(item.quantidadeNinho / 10 ) > 1">s</span> • 
+      <ion-badge color="secondary">{{ item.quantidadeMelgueira /10  }}</ion-badge> Melgueira<span *ngIf="(item.quantidadeMelgueira /10) > 1">s</span>
 
-      <button ion-button icon-only clear item-end (click)="tarefa(item, $event)">
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
-      </button>
-
-      <button ion-button icon-only clear item-end (click)="revisao(item, $event)">
-        <ion-icon name="clipboard"></ion-icon>
-      </button>
-      
+      <div class="button-list" item-end>
+        <button color="dark" ion-button icon-only clear (click)="tarefa(item, $event)">
+          <ion-icon name="checkbox-outline"></ion-icon>
+        </button>
+  
+        <button color="dark" ion-button icon-only clear (click)="revisao(item, $event)">
+          <ion-icon name="eye"></ion-icon>
+        </button>
+      </div>
 
     </ion-item>
   </ion-list>
