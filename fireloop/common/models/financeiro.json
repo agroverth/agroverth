@@ -41,10 +41,24 @@
     },
     "eTituloQuitado": {
       "type": "boolean"
+    },
+    "preTitulo": {
+      "type": "boolean"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "categoria": {
+      "type": "belongsTo",
+      "model": "financeiroCategoria",
+      "foreignKey": ""
+    },
+    "pessoa": {
+      "type": "belongsTo",
+      "model": "pessoa",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -35,6 +35,7 @@ export class MyApp {
       { title: 'Financeiro', icon: 'logo-usd', component: 'FinanceiroListaPage' },
       { title: 'Categoria', icon: 'pricetags', component: 'FinanceiroCategoriaListaPage' },
       { title: 'Cliente e fornecedor', icon: 'ios-people', component: 'PessoaListaPage' }
+      // { title: 'Apiário loc (teste)', icon: 'ios-people', component: 'ApiarioLocalizacaoListaPage' }
     ];
 
   }
