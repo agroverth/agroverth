@@ -11,6 +11,8 @@ import { Financeiro } from '../../models/Financeiro';
 import { FinanceiroCategoria } from '../../models/FinanceiroCategoria';
 import { ColmeiaColheitaItens } from '../../models/ColmeiaColheitaItens';
 import { ColmeiaTarefa } from '../../models/ColmeiaTarefa';
+import { AbelhaEspecie } from '../../models/AbelhaEspecie';
+import { ColmeiraTemperatura } from '../../models/ColmeiraTemperatura';
 
 export interface Models { [name: string]: any }
 
@@ -29,6 +31,8 @@ export class SDKModels {
     FinanceiroCategoria: FinanceiroCategoria,
     ColmeiaColheitaItens: ColmeiaColheitaItens,
     ColmeiaTarefa: ColmeiaTarefa,
+    AbelhaEspecie: AbelhaEspecie,
+    ColmeiraTemperatura: ColmeiraTemperatura,
     
   };
 

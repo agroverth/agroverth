@@ -1,5 +1,5 @@
 {
-  "name": "colmeiaTarefa",
+  "name": "colmeiraTemperatura",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for colmeiaTarefa registers.",
+        "description": "Statistical information for colmeiraTemperatura registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -24,22 +24,10 @@
     ]
   },
   "properties": {
-    "previsao": {
-      "type": "date"
-    },
-    "tipo": {
-      "type": "string"
-    },
-    "quantidade": {
+    "temperatura": {
       "type": "number"
     },
-    "detalhe": {
-      "type": "string"
-    },
-    "concluida": {
-      "type": "boolean"
-    },
-    "dataConclusao": {
+    "data": {
       "type": "date"
     }
   },
@@ -48,10 +36,7 @@
     "colmeia": {
       "type": "belongsTo",
       "model": "colmeia",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
+      "foreignKey": ""
     }
   },
   "acls": [],
