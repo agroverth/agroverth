@@ -20,8 +20,8 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    LoopBackConfig.setBaseURL('http://localhost:3000');
-    // LoopBackConfig.setBaseURL('https://agroverth.herokuapp.com');
+    // LoopBackConfig.setBaseURL('http://localhost:3000');
+    LoopBackConfig.setBaseURL('https://agroverth.herokuapp.com');
 
     // used for an example of ngFor and navigation
     this.pages = [
