@@ -1,5 +1,5 @@
 {
-  "name": "colmeiaTarefa",
+  "name": "abelhaEspecie",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,7 +14,7 @@
       {
         "method": "stats",
         "endpoint": "/stats",
-        "description": "Statistical information for colmeiaTarefa registers.",
+        "description": "Statistical information for abelhaEspecie registers.",
         "type": "model",
         "count": {
           "on": "createdAt",
@@ -24,36 +24,24 @@
     ]
   },
   "properties": {
-    "previsao": {
-      "type": "date"
-    },
-    "tipo": {
+    "nome": {
       "type": "string"
     },
-    "quantidade": {
+    "grauAgressividade": {
       "type": "number"
     },
-    "detalhe": {
-      "type": "string"
-    },
-    "concluida": {
+    "eMellifera": {
       "type": "boolean"
     },
-    "dataConclusao": {
-      "type": "date"
+    "origem": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean"
     }
   },
   "validations": [],
-  "relations": {
-    "colmeia": {
-      "type": "belongsTo",
-      "model": "colmeia",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

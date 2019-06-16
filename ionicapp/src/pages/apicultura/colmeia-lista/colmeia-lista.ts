@@ -50,13 +50,16 @@ export class ColmeiaListaPage {
       }
       else this.navCtrl.push('ColmeiaFormPage');
     }
-
-
   }
 
   revisao(item: Colmeia = null, ev: any) {
     ev.stopPropagation();
     if (item) this.navCtrl.push('ColmeiaRevisaoListaPage', { item: item });
+  }
+
+  tarefa(item: Colmeia = null, ev: any) {
+    ev.stopPropagation();
+    if (item) this.navCtrl.push('ColmeiaTarefaListaPage', { item: item });
   }
 
 }

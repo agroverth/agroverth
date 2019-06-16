@@ -10,5 +10,7 @@ export * from './Financeiro';
 export * from './FinanceiroCategoria';
 export * from './ColmeiaColheitaItens';
 export * from './ColmeiaTarefa';
+export * from './AbelhaEspecie';
+export * from './ColmeiraTemperatura';
 export * from './SDKModels';
 export * from './logger.service';

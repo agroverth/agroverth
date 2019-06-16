@@ -4,13 +4,9 @@ import {
 } from '../index';
 
 declare var Object: any;
-export interface ColmeiaTarefaInterface {
-  "previsao"?: Date;
-  "tipo"?: string;
-  "quantidade"?: number;
-  "detalhe"?: string;
-  "concluida"?: boolean;
-  "dataConclusao"?: Date;
+export interface ColmeiraTemperaturaInterface {
+  "temperatura"?: number;
+  "data"?: Date;
   "id"?: any;
   "colmeiaId"?: any;
   "createdAt"?: Date;
@@ -18,36 +14,32 @@ export interface ColmeiaTarefaInterface {
   colmeia?: Colmeia;
 }
 
-export class ColmeiaTarefa implements ColmeiaTarefaInterface {
-  "previsao": Date;
-  "tipo": string;
-  "quantidade": number;
-  "detalhe": string;
-  "concluida": boolean;
-  "dataConclusao": Date;
+export class ColmeiraTemperatura implements ColmeiraTemperaturaInterface {
+  "temperatura": number;
+  "data": Date;
   "id": any;
   "colmeiaId": any;
   "createdAt": Date;
   "updatedAt": Date;
   colmeia: Colmeia;
-  constructor(data?: ColmeiaTarefaInterface) {
+  constructor(data?: ColmeiraTemperaturaInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `ColmeiaTarefa`.
+   * i.e. `ColmeiraTemperatura`.
    */
   public static getModelName() {
-    return "ColmeiaTarefa";
+    return "ColmeiraTemperatura";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of ColmeiaTarefa for dynamic purposes.
+  * This method creates an instance of ColmeiraTemperatura for dynamic purposes.
   **/
-  public static factory(data: ColmeiaTarefaInterface): ColmeiaTarefa{
-    return new ColmeiaTarefa(data);
+  public static factory(data: ColmeiraTemperaturaInterface): ColmeiraTemperatura{
+    return new ColmeiraTemperatura(data);
   }
   /**
   * @method getModelDefinition
@@ -58,33 +50,17 @@ export class ColmeiaTarefa implements ColmeiaTarefaInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'ColmeiaTarefa',
-      plural: 'ColmeiaTarefas',
-      path: 'ColmeiaTarefas',
+      name: 'ColmeiraTemperatura',
+      plural: 'ColmeiraTemperaturas',
+      path: 'ColmeiraTemperaturas',
       idName: 'id',
       properties: {
-        "previsao": {
-          name: 'previsao',
-          type: 'Date'
-        },
-        "tipo": {
-          name: 'tipo',
-          type: 'string'
-        },
-        "quantidade": {
-          name: 'quantidade',
+        "temperatura": {
+          name: 'temperatura',
           type: 'number'
         },
-        "detalhe": {
-          name: 'detalhe',
-          type: 'string'
-        },
-        "concluida": {
-          name: 'concluida',
-          type: 'boolean'
-        },
-        "dataConclusao": {
-          name: 'dataConclusao',
+        "data": {
+          name: 'data',
           type: 'Date'
         },
         "id": {
