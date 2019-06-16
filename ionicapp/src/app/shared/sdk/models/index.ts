@@ -12,5 +12,6 @@ export * from './ColmeiaColheitaItens';
 export * from './ColmeiaTarefa';
 export * from './AbelhaEspecie';
 export * from './ColmeiraTemperatura';
+export * from './ApiarioLocalizacao';
 export * from './BaseModels';
 export * from './FireLoopRef';

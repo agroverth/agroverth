@@ -13,6 +13,7 @@ import { ColmeiaColheitaItens } from '../../models/ColmeiaColheitaItens';
 import { ColmeiaTarefa } from '../../models/ColmeiaTarefa';
 import { AbelhaEspecie } from '../../models/AbelhaEspecie';
 import { ColmeiraTemperatura } from '../../models/ColmeiraTemperatura';
+import { ApiarioLocalizacao } from '../../models/ApiarioLocalizacao';
 
 export interface Models { [name: string]: any }
 
@@ -33,6 +34,7 @@ export class SDKModels {
     ColmeiaTarefa: ColmeiaTarefa,
     AbelhaEspecie: AbelhaEspecie,
     ColmeiraTemperatura: ColmeiraTemperatura,
+    ApiarioLocalizacao: ApiarioLocalizacao,
     
   };
 
