@@ -12,15 +12,20 @@ import { Model } from '@mean-expert/model';
   },
   remotes: {
     myRemote: {
-      returns : { arg: 'result', type: 'array' },
-      http    : { path: '/my-remote', verb: 'get' }
+      returns: { arg: 'result', type: 'array' },
+      http: { path: '/my-remote', verb: 'get' }
     }
   }
 })
 
 class apiario {
   // LoopBack model instance is injected in constructor
-  constructor(public model: any) {}
+  constructor(public model: any) {
+    model.observe('access', (ctx: any, next: Function) => {
+      console.log('access', JSON.stringify(ctx.query.where))
+      next();
+    })
+  }
 
   // Example Operation Hook
   beforeSave(ctx: any, next: Function): void {
