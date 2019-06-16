@@ -29,21 +29,17 @@
     <ion-input id="descricao" type="text" [(ngModel)]="dadosDoForm.descricao"></ion-input>
   </ion-item>
 
-  <button ion-button color="secondary" outline (click)="addCaixa()">Adicionar Caixa</button>
+  <button ion-button color="secondary" outline (click)="addCaixa()">Adicionar apiário</button>
+  <button ion-button color="secondary" outline (click)="addCaixa()">Adicionar caixa</button>
 
   <ion-list>
     <ion-item *ngFor="let item of lista; let i = index;" (click)="editarItem(item)" text-wrap>
       <h2>{{item?.colmeia?.apiario?.nome}} {{item?.colmeia?.nome}}</h2>
-      <b>Mel:</b> {{ item.quantidadeMel }}
-      <span *ngIf="item?.quantidadeNectar">-
-        <b>Néctar:</b> {{ item.quantidadeNectar }}</span>
-      <span *ngIf="item?.quantidadePolen">-
-        <b>Pólen:</b> {{ item.quantidadePolen }}</span>
-      <span *ngIf="item?.quantidadePropolis">-
-        <b>Própolis:</b> {{ item.quantidadePropolis }}</span>
-      <span *ngIf="item?.quantidadeCera">-
-        <b>Cera:</b> {{ item.quantidadeCera }}</span>
-
+      <b>Mel:</b> <span *ngIf="item?.quantidadeNectar">{{ item.quantidadeMel }}</span>
+      <b>Néctar:</b> <span *ngIf="item?.quantidadePolen">{{ item.quantidadeNectar }}</span>
+      <b>Pólen:</b> <span *ngIf="item?.quantidadePropolis">{{ item.quantidadePolen }}</span>
+      <b>Própolis:</b> <span *ngIf="item?.quantidadeCera">{{ item.quantidadePropolis }}</span>
+      <b>Cera:</b> <span *ngIf="item?.quantidadeCera"> {{ item.quantidadeCera }} </span>
       <ion-icon item-end *ngIf="item.temOcorrencia" color="danger" name="ios-bug"></ion-icon>
     </ion-item>
   </ion-list>

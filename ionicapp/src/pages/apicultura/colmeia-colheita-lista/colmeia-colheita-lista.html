@@ -24,7 +24,6 @@
   
     <ion-list>
       <ion-item text-wrap *ngFor="let item of lista" (click)="abrir(item)">
-        
         {{ item.data | date : 'dd/MM/yyyy'}}
       </ion-item>
     </ion-list>
