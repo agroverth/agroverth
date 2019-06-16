@@ -35,6 +35,8 @@ export class MyApp {
       { title: 'Financeiro', component: 'FinanceiroListaPage' },
       { title: 'Categoria', component: 'FinanceiroCategoriaListaPage' },
       { title: 'Cliente e fornecedor', component: 'PessoaListaPage' }
+      // ,
+      // { title: 'AbelhaEspecie (temp)', component: 'AbelhaEspecieListaPage' }
     ];
 
   }
