@@ -35,13 +35,14 @@ $app-direction: ltr;
 
 $colors: (
   primary:    #FAC20B,
-  secondary:  #941B0C,
+  secondary:  #06A77D,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #220901
 );
 
 $primary: color($colors, primary);
+$light: color($colors, light);
 
 
 // App iOS Variables
