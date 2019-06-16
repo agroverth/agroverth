@@ -23,19 +23,23 @@ export class ColmeiaTarefaListaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public API: ColmeiaTarefaApi) {
     let item = navParams.get('item');
-    
-    if (item) {
-      this.colmeia = Object.assign(new Colmeia, item);
-      this.API.find({
-        where: {
-          //colmeiaId: this.colmeia.id
-        },
-        include: { 'colmeia': 'apiario' }
-      }).subscribe((lista: ColmeiaTarefa[]) => {
+
+
+    this.API.find({
+      where: {
+        //colmeiaId: this.colmeia.id
+      },
+      include: { 'colmeia': 'apiario' }
+    }).subscribe((lista: ColmeiaTarefa[]) => {
+      if (item) {
+        this.colmeia = Object.assign(new Colmeia, item);
         this.lista = lista.filter(x => x.colmeiaId == this.colmeia.id);
-      });
-    }
+      }
+      else
+        this.lista = lista;
+    });
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ColmeiaTarefaListaPage');
