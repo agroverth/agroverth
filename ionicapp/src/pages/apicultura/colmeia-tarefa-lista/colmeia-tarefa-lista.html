@@ -25,7 +25,16 @@
 
   <ion-list>
     <ion-item text-wrap *ngFor="let item of lista" (click)="abrir(item)">
-      {{ item.data | date: 'dd/MM/yyyy'}}
+      {{item.quantidade}} - {{ listaTipo.descricao(item.tipo)}}
+      <p *ngIf="item.detalhe">
+        {{item.detalhe}}
+      </p>
+      <br />
+      <small>
+        <b>Criado em </b> {{ item.createdAt | date: 'dd/MM/yyyy'}}
+        <span *ngIf="!item.concluida">• <b>Previsão para </b> {{ item.previsao | date: 'dd/MM/yyyy'}}</span>
+        <span *ngIf="item.concluida">• <b>Concluida em </b> {{ item.dataConclusao | date: 'dd/MM/yyyy'}}</span>
+      </small>
     </ion-item>
   </ion-list>
 
