@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Configurações</ion-title>
+  </ion-navbar>
+  </ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Geral
+    </ion-list-header>
+    <ion-item (click)="navCtrl.push('PessoaListaPage')">
+      <ion-icon name="tags" item-start color="primary"></ion-icon>
+      Clientes e fornecedores
+    </ion-item>
+    <ion-list-header>
+      Parâmetros
+    </ion-list-header>
+    <ion-item (click)="navCtrl.push('CategoriaListaPage')">
+      <ion-icon name="cube" item-start color="primary"></ion-icon>
+      Categoria
+    </ion-item>
+    <ion-item (click)="navCtrl.push('AbelhaEspecieListaPage')">
+      <ion-icon name="tags" item-start color="primary"></ion-icon>
+      Espécie abelhas
+    </ion-item>
+    <ion-item (click)="navCtrl.push('ApiarioLocalizacaoListaPage')">
+      <ion-icon name="tags" item-start color="primary"></ion-icon>
+      Localização apiário
+    </ion-item>
+  </ion-list>
+
+</ion-content>
