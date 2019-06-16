@@ -17,29 +17,45 @@
 
 <ion-content>
 
-  <ion-item>
-    <ion-icon color="primary" name="calendar" item-start></ion-icon>
-    <ion-label stacked>Data</ion-label>
-    <ion-input type="date" [(ngModel)]="data"></ion-input>
-  </ion-item>
+  <ion-item-group>
 
-  <ion-item>
-    <ion-icon color="primary" name="ios-chatbubbles" item-start></ion-icon>
-    <ion-label stacked>Observação</ion-label>
-    <ion-input id="descricao" type="text" [(ngModel)]="dadosDoForm.descricao"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-icon color="primary" name="calendar" item-start></ion-icon>
+      <ion-label stacked>Data</ion-label>
+      <ion-input type="date" [(ngModel)]="data"></ion-input>
+    </ion-item>
 
-  <button ion-button color="secondary" outline (click)="addCaixa()">Adicionar apiário</button>
-  <button ion-button color="secondary" outline (click)="addCaixa()">Adicionar caixa</button>
+    <ion-item>
+      <ion-icon color="primary" name="ios-chatbubbles" item-start></ion-icon>
+      <ion-label stacked>Observação</ion-label>
+      <ion-input id="descricao" type="text" [(ngModel)]="dadosDoForm.descricao"></ion-input>
+    </ion-item>
+
+  </ion-item-group>
+
+  <div class="buttons-back">
+    <button ion-button color="secondary" outline (click)="addCaixa()">Adicionar apiário</button>
+    <button ion-button color="secondary" outline (click)="addCaixa()">Adicionar caixa</button>
+  </div>
 
   <ion-list>
     <ion-item *ngFor="let item of lista; let i = index;" (click)="editarItem(item)" text-wrap>
       <h2>{{item?.colmeia?.apiario?.nome}} {{item?.colmeia?.nome}}</h2>
-      <b>Mel:</b> <span *ngIf="item?.quantidadeNectar">{{ item.quantidadeMel }}</span>
-      <b>Néctar:</b> <span *ngIf="item?.quantidadePolen">{{ item.quantidadeNectar }}</span>
-      <b>Pólen:</b> <span *ngIf="item?.quantidadePropolis">{{ item.quantidadePolen }}</span>
-      <b>Própolis:</b> <span *ngIf="item?.quantidadeCera">{{ item.quantidadePropolis }}</span>
-      <b>Cera:</b> <span *ngIf="item?.quantidadeCera"> {{ item.quantidadeCera }} </span>
+      <span *ngIf="item?.quantidadeMel">
+          <b>Mel:</b> <span >{{ item.quantidadeMel }}</span> • 
+      </span>
+      <span *ngIf="item?.quantidadeNectar">
+          <b>Néctar:</b> <span>{{ item.quantidadeNectar }}</span> • 
+      </span>
+      <span *ngIf="item?.quantidadePolen">
+          <b>Pólen:</b> <span>{{ item.quantidadePolen }}</span> • 
+      </span>
+      <span *ngIf="item?.quantidadePropolis">
+          <b>Própolis:</b> <span>{{ item.quantidadePropolis }}</span> • 
+      </span>
+      <span *ngIf="item?.quantidadeCera">
+          <b>Cera:</b> <span> {{ item.quantidadeCera }} </span> • 
+      </span>
       <ion-icon item-end *ngIf="item.temOcorrencia" color="danger" name="ios-bug"></ion-icon>
     </ion-item>
   </ion-list>

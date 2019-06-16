@@ -33,9 +33,9 @@ export class MyApp {
       { title: 'Colheita', icon: 'md-archive', component: 'ColmeiaColheitaListaPage' },
       // { title: 'Financeiro', icon: 'ios-archive', component: null },
       { title: 'Financeiro', icon: 'logo-usd', component: 'FinanceiroListaPage' },
-      { title: 'Categoria', icon: 'pricetags', component: 'FinanceiroCategoriaListaPage' },
-      { title: 'Cliente e fornecedor', icon: 'ios-people', component: 'PessoaListaPage' }
-      // { title: 'Apiário loc (teste)', icon: 'ios-people', component: 'ApiarioLocalizacaoListaPage' }
+      // { title: 'Categoria', icon: 'pricetags', component: 'FinanceiroCategoriaListaPage' },
+      // { title: 'Cliente e fornecedor', icon: 'ios-people', component: 'PessoaListaPage' },
+      { title: 'Configurações', icon: 'settings', component: 'ConfiguracoesPage' }
     ];
 
   }
