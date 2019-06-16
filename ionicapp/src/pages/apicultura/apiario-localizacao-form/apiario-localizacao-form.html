@@ -1,0 +1,85 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title>Localização do apiário</ion-title>
+  
+      <ion-buttons end>
+        <button ion-button icon-only (click)="salvar()">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="excluir()" *ngIf="dadosDoForm.id">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+  
+    <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="dadosDoForm.nome"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label stacked>Início da produção</ion-label>
+      <ion-input type="text" [(ngModel)]="dadosDoForm.mesInicioProducao"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label stacked>Fim da produção</ion-label>
+      <ion-input type="text" [(ngModel)]="dadosDoForm.mesFimProducao"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="primary" name="grid" item-start></ion-icon>
+      <ion-label>Bioma</ion-label>
+      <ion-select [(ngModel)]="dadosDoForm.tipoVegetacao">
+        <ion-option>Caatinga</ion-option>
+        <ion-option>Campos</ion-option>
+        <ion-option>Cerrado</ion-option>
+        <ion-option>Floresta Amazônica</ion-option>
+        <ion-option>Mata Atlântica</ion-option>
+        <ion-option>Pantanal</ion-option>
+      </ion-select>
+    </ion-item>
+  
+    <!-- <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label stacked>Bioma</ion-label>
+      <ion-input type="text" [(ngModel)]="dadosDoForm.tipoVegetacao"></ion-input>
+    </ion-item> -->
+
+<!--   
+    <ion-item>
+      <ion-icon color="primary" name="grid" item-start></ion-icon>
+      <ion-label>Origem</ion-label>
+      <ion-select [(ngModel)]="dadosDoForm.origem">
+        <ion-option>Africana</ion-option>
+        <ion-option>Européia</ion-option>
+        <ion-option>Outros</ion-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-icon color="primary" name="cube" item-start></ion-icon>
+      <ion-label>Mellifera</ion-label>
+      <ion-toggle [(ngModel)]="dadosDoForm.eMellifera"></ion-toggle>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label stacked>Grau de agressividade</ion-label>
+      <ion-range [(ngModel)]="dadosDoForm.grauAgressividade" min="0" max="5" step="1" snaps="true" color="secondary"></ion-range>
+    </ion-item>
+  
+    <ion-item *ngIf="dadosDoForm.id">
+        <ion-icon color="primary" name="cube" item-start></ion-icon>
+        <ion-label>Ativo</ion-label>
+        <ion-toggle [(ngModel)]="dadosDoForm.ativo"></ion-toggle>
+      </ion-item>
+   -->
+  </ion-content>
