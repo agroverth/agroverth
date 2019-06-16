@@ -1,4 +1,8 @@
 /* tslint:disable */
+import {
+  Pessoa,
+  FinanceiroCategoria
+} from '../index';
 
 declare var Object: any;
 export interface FinanceiroInterface {
@@ -8,9 +12,14 @@ export interface FinanceiroInterface {
   "dataPagamento"?: Date;
   "eTituloReceber"?: boolean;
   "eTituloQuitado"?: boolean;
+  "preTitulo"?: boolean;
   "id"?: any;
+  "pessoaId"?: any;
   "createdAt"?: Date;
   "updatedAt"?: Date;
+  "categoriaId"?: any;
+  pessoa?: Pessoa;
+  categoria?: FinanceiroCategoria;
 }
 
 export class Financeiro implements FinanceiroInterface {
@@ -20,9 +29,14 @@ export class Financeiro implements FinanceiroInterface {
   "dataPagamento": Date;
   "eTituloReceber": boolean;
   "eTituloQuitado": boolean;
+  "preTitulo": boolean;
   "id": any;
+  "pessoaId": any;
   "createdAt": Date;
   "updatedAt": Date;
+  "categoriaId": any;
+  pessoa: Pessoa;
+  categoria: FinanceiroCategoria;
   constructor(data?: FinanceiroInterface) {
     Object.assign(this, data);
   }
@@ -80,8 +94,16 @@ export class Financeiro implements FinanceiroInterface {
           name: 'eTituloQuitado',
           type: 'boolean'
         },
+        "preTitulo": {
+          name: 'preTitulo',
+          type: 'boolean'
+        },
         "id": {
           name: 'id',
+          type: 'any'
+        },
+        "pessoaId": {
+          name: 'pessoaId',
           type: 'any'
         },
         "createdAt": {
@@ -92,8 +114,28 @@ export class Financeiro implements FinanceiroInterface {
           name: 'updatedAt',
           type: 'Date'
         },
+        "categoriaId": {
+          name: 'categoriaId',
+          type: 'any'
+        },
       },
       relations: {
+        pessoa: {
+          name: 'pessoa',
+          type: 'Pessoa',
+          model: 'Pessoa',
+          relationType: 'belongsTo',
+                  keyFrom: 'pessoaId',
+          keyTo: 'id'
+        },
+        categoria: {
+          name: 'categoria',
+          type: 'FinanceiroCategoria',
+          model: 'FinanceiroCategoria',
+          relationType: 'belongsTo',
+                  keyFrom: 'categoriaId',
+          keyTo: 'id'
+        },
       }
     }
   }

@@ -1,10 +1,10 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Tarefa {{ colmeia?.apiario?.nome  +'-'+  colmeia?.nome }}</ion-title>
+    <ion-title>Tarefa {{ colmeia?.apiario?.nome }} {{ colmeia?.nome }}</ion-title>
 
     <ion-buttons end>
-      <button ion-button icon-only (click)="salvar()">
+      <button ion-button icon-only (click)="salvar()" *ngIf="permiteSalvar">
         <ion-icon name="checkmark"></ion-icon>
       </button>
       <!-- <button ion-button icon-only (click)="excluir()" *ngIf="dadosDoForm.id">
@@ -14,7 +14,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
   <ion-item>
     <ion-icon color="primary" name="calendar" item-start></ion-icon>
@@ -26,7 +26,8 @@
     <ion-icon color="primary" name="cube" item-start></ion-icon>
     <ion-label stacked>Tipo</ion-label>
     <ion-select [(ngModel)]="dadosDoForm.tipo">
-      <ion-option value="addMelgueira" selected>Adicionar quadro de melgueira</ion-option>
+      <ion-option value="" selected>Selecione</ion-option>
+      <ion-option value="addMelgueira">Adicionar quadro de melgueira</ion-option>
       <ion-option value="delMelgueira">Remover quadro de melgueira</ion-option>
       <ion-option value="quadroMelgueira">Troca de quadro de melgueira</ion-option>
       <ion-option value="addNinho">Adicionar quadro de ninho</ion-option>

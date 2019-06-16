@@ -7,7 +7,7 @@
       </button>
     </ion-buttons>
 
-    <ion-title>Colheita - Caixa</ion-title>
+    <ion-title>Colheita por caixa</ion-title>
 
     <ion-buttons end>
       <button ion-button icon-only (click)="salvar()">
@@ -19,36 +19,54 @@
     </ion-buttons>
   </ion-navbar>
 
+  <ion-toolbar color="primary">
+    <div class="destaque">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <h1>{{ colmeia?.quantidadeMelgueira }}</h1>
+            <span>Melgueiras</span>
+          </ion-col>
+          <ion-col col-6>
+            <h1>{{ colmeia?.quantidadeNinho }}</h1>
+            <span>Ninhos</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!-- <b>Melgueiras:</b> {{colmeia?.quantidadeMelgueira}} | <b>Ninhos:</b> {{ colmeia?.quantidadeNinho}} -->
+    </div>
+  </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
+
+  <ion-item-group>
   <ion-item>
     <ion-icon color="primary" name="cube" item-start></ion-icon>
     <ion-label stacked>Caixa</ion-label>
     <ion-input type="text" readonly="readonly" [value]="colmeia?.apiario?.nome  +'-'+  colmeia?.nome"></ion-input>
     <br>
   </ion-item>
-  <ion-item-divider>
-    <b>Melgueiras:</b> {{colmeia?.quantidadeMelgueira}} |
-    <b>Ninhos:</b> {{ colmeia?.quantidadeNinho}}
-  </ion-item-divider>
-
 
   <ion-item>
+    <ion-icon item-start name="warning" color="primary"></ion-icon>
     <ion-label>Possui Ocorrências?</ion-label>
     <ion-toggle checked="false" [(ngModel)]="dadosDoForm.temOcorrencia"></ion-toggle>
   </ion-item>
 
   <ion-item *ngIf="dadosDoForm.temOcorrencia">
-    <ion-icon color="primary" name="cube" item-start></ion-icon>
+    <ion-icon color="primary" name="information-circle" item-start></ion-icon>
     <ion-label stacked>Detalhes da Ocorrência</ion-label>
     <ion-textarea [(ngModel)]="dadosDoForm.ocorrencia"></ion-textarea>
   </ion-item>
 
+  </ion-item-group>
 
+  <ion-item-divider color="light">Alimento</ion-item-divider>
 
   <ion-item>
-    <ion-icon color="primary" name="cube" item-start></ion-icon>
+    <!-- <ion-icon color="primary" name="cube" item-start></ion-icon> -->
     <ion-label>Pólen</ion-label>
     <div item-end>
       <div class="quantidades">
@@ -67,7 +85,7 @@
     </div>
   </ion-item>
   <ion-item>
-    <ion-icon color="primary" name="cube" item-start></ion-icon>
+    <!-- <ion-icon color="primary" name="cube" item-start></ion-icon> -->
     <ion-label>Néctar</ion-label>
     <div item-end>
       <div class="quantidades">
@@ -86,7 +104,7 @@
     </div>
   </ion-item>
   <ion-item>
-    <ion-icon color="primary" name="cube" item-start></ion-icon>
+    <!-- <ion-icon color="primary" name="cube" item-start></ion-icon> -->
     <ion-label>Mel</ion-label>
     <div item-end>
       <div class="quantidades">
@@ -105,7 +123,7 @@
     </div>
   </ion-item>
   <ion-item>
-    <ion-icon color="primary" name="cube" item-start></ion-icon>
+    <!-- <ion-icon color="primary" name="cube" item-start></ion-icon> -->
     <ion-label>Própolis</ion-label>
     <div item-end>
       <div class="quantidades">
@@ -124,7 +142,7 @@
     </div>
   </ion-item>
   <ion-item>
-    <ion-icon color="primary" name="cube" item-start></ion-icon>
+    <!-- <ion-icon color="primary" name="cube" item-start></ion-icon> -->
     <ion-label>Cera</ion-label>
     <div item-end>
       <div class="quantidades">
